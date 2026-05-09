@@ -1,23 +1,33 @@
 ﻿<!DOCTYPE html>
-<html lang="hu">
+<html lang="hu" data-language="hu">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Első Oldal</title>
+    <title>Vajas-Klicsu Dóra</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="overlay-content">
-      <nav class="top-nav" aria-label="Fő menü">
-        <a href="#works">works</a>
+      <nav class="top-nav" aria-label="Fő menü" data-label-hu="Fő menü" data-label-en="Main menu">
+        <a href="#works"><span lang="hu">munkák</span><span lang="en">works</span></a>
         <a href="#cv">cv</a>
-        <a href="#contact">contact</a>
+        <a href="#contact"><span lang="hu">kapcsolat</span><span lang="en">contact</span></a>
+        <div
+          class="language-switch"
+          role="group"
+          aria-label="Nyelvválasztás"
+          data-label-hu="Nyelvválasztás"
+          data-label-en="Language selection"
+        >
+          <button type="button" data-language="hu" aria-pressed="true">HU</button>
+          <button type="button" data-language="en" aria-pressed="false">EN</button>
+        </div>
       </nav>
 
       <h1 class="name">
@@ -25,7 +35,7 @@
       </h1>
 
       <section class="about-section tab-section" id="about">
-        <div class="about-projects" aria-label="Munkák">
+        <div class="about-projects" aria-label="Munkák" data-label-hu="Munkák" data-label-en="Works">
           <a class="about-project-card" href="#soft-residue">
             <img
               class="about-project-image-soft"
@@ -46,7 +56,7 @@
               decoding="async"
               />
             <span class="work-frame" aria-hidden="true"></span>
-            <span class="work-label">Scoby experiment // 01</span>
+            <span class="work-label"><span lang="hu">SCOBY kísérlet // 01</span><span lang="en">SCOBY experiment // 01</span></span>
           </a>
 
           <a class="about-project-card" href="#lobotomy-kit">
@@ -64,7 +74,9 @@
           <a
             class="about-project-card"
             href="#touchdesigner-environment-modelling"
-            aria-label="TouchDesigner Environment Modelling"
+            aria-label="TouchDesigner környezetmodellezés"
+            data-label-hu="TouchDesigner környezetmodellezés"
+            data-label-en="TouchDesigner Environment Modelling"
           >
             <img
               src="assets/optimized/display/assets-touchdesigner-untitled07-png-724be5b0.png"
@@ -73,78 +85,88 @@
               decoding="async"
               />
             <span class="work-frame" aria-hidden="true"></span>
-            <span class="work-label">TouchDesigner Environment Modelling</span>
+            <span class="work-label"><span lang="hu">TouchDesigner környezetmodellezés</span><span lang="en">TouchDesigner Environment Modelling</span></span>
           </a>
 
           <a
             class="about-project-card about-project-card--empty"
             href="#unreal-engine-game-design"
-            aria-label="Unreal Engine Game Design"
+            aria-label="Unreal Engine játéktervezés"
+            data-label-hu="Unreal Engine játéktervezés"
+            data-label-en="Unreal Engine Game Design"
           >
             <span class="work-frame" aria-hidden="true"></span>
-            <span class="work-label">Unreal Engine Game Design</span>
+            <span class="work-label"><span lang="hu">Unreal Engine játéktervezés</span><span lang="en">Unreal Engine Game Design</span></span>
           </a>
 
           <a
             class="about-project-card about-project-card--empty"
             href="#hair-fur-project"
-            aria-label="Hair/Fur Project"
+            aria-label="Szőr/haj projekt"
+            data-label-hu="Szőr/haj projekt"
+            data-label-en="Hair/Fur Project"
           >
             <span class="work-frame" aria-hidden="true"></span>
-            <span class="work-label">Hair/Fur Project</span>
+            <span class="work-label"><span lang="hu">Szőr/haj projekt</span><span lang="en">Hair/Fur Project</span></span>
           </a>
 
           <a
             class="about-project-card about-project-card--empty"
             href="#scoby-shell"
-            aria-label="SCOBY / Shell"
+            aria-label="Hogy tovább ne repedjen"
+            data-label-hu="Hogy tovább ne repedjen"
+            data-label-en="To keep it from splitting further"
           >
             <span class="work-frame" aria-hidden="true"></span>
-            <span class="work-label">SCOBY / Shell</span>
+            <span class="work-label"><span lang="hu">Hogy tovább ne repedjen</span><span lang="en">To keep it from splitting further</span></span>
           </a>
 
           <a
             class="about-project-card about-project-card--empty"
             href="#orizetlen-konyv"
             aria-label="Őrizetlen Könyv"
+            data-label-hu="Őrizetlen Könyv"
+            data-label-en="Unguarded Book"
           >
             <span class="work-frame" aria-hidden="true"></span>
-            <span class="work-label">Őrizetlen Könyv</span>
+            <span class="work-label"><span lang="hu">Őrizetlen Könyv</span><span lang="en">Unguarded Book</span></span>
           </a>
         </div>
       </section>
 
       <section class="works-section tab-section" id="works">
-        <div class="work-categories" aria-label="Work categories">
-          <a class="work-category" href="#three-d-works" aria-label="3D Works">
+        <div class="work-categories" aria-label="Munkakategóriák" data-label-hu="Munkakategóriák" data-label-en="Work categories">
+          <a class="work-category" href="#three-d-works" aria-label="3D munkák" data-label-hu="3D munkák" data-label-en="3D Works">
             <img src="assets/optimized/display/assets-soft-resdiue-2a-mud-castle-png-3430fecb.png" alt=""
                     loading="lazy"
                     decoding="async"
                     />
             <span class="work-frame" aria-hidden="true"></span>
-            <span class="work-label">3D Works</span>
+            <span class="work-label"><span lang="hu">3D munkák</span><span lang="en">3D Works</span></span>
           </a>
 
           <a
             class="work-category"
             href="#experimental-works"
-            aria-label="Experimental Works"
+            aria-label="Kísérleti munkák"
+            data-label-hu="Kísérleti munkák"
+            data-label-en="Experimental Works"
           >
             <img src="assets/optimized/display/assets-scoby-experiment-ai-scoby-01-png-809a57a5.jpg" alt=""
                     loading="lazy"
                     decoding="async"
                     />
             <span class="work-frame" aria-hidden="true"></span>
-            <span class="work-label">Experimental Works</span>
+            <span class="work-label"><span lang="hu">Kísérleti munkák</span><span lang="en">Experimental Works</span></span>
           </a>
 
-          <a class="work-category" href="#objects" aria-label="Objects">
+          <a class="work-category" href="#objects" aria-label="Tárgyak" data-label-hu="Tárgyak" data-label-en="Objects">
             <img src="assets/optimized/display/assets-lobotomy-kit-artsy-03-png-5d66de03.jpg" alt=""
                     loading="lazy"
                     decoding="async"
                     />
             <span class="work-frame" aria-hidden="true"></span>
-            <span class="work-label">Objects</span>
+            <span class="work-label"><span lang="hu">Tárgyak</span><span lang="en">Objects</span></span>
           </a>
         </div>
       </section>
@@ -152,11 +174,13 @@
       <section class="experimental-section tab-section" id="experimental-works">
         <div class="experimental-work-list">
           <article class="experimental-project">
-            <h2 class="experimental-title">Scoby experiment // 01</h2>
+            <h2 class="experimental-title"><span lang="hu">SCOBY kísérlet // 01</span><span lang="en">SCOBY experiment // 01</span></h2>
 
             <div
               class="experimental-copy"
-              aria-label="Scoby experiment project text"
+              aria-label="SCOBY kísérlet projektleírás"
+              data-label-hu="SCOBY kísérlet projektleírás"
+              data-label-en="SCOBY experiment project text"
             >
               <p lang="hu">
                 A projekt során a soft interface lehetőségeit egy élő anyagon,
@@ -220,23 +244,31 @@
 
             <div
               class="experimental-variations"
-              aria-label="Scoby experiment variations"
+              aria-label="SCOBY kísérlet variációk"
+              data-label-hu="SCOBY kísérlet variációk"
+              data-label-en="SCOBY experiment variations"
             >
               <section class="experimental-variation">
                 <div
                   class="experimental-variation-media"
                   aria-label="1. variáció képe"
+                  data-label-hu="1. variáció képe"
+                  data-label-en="Variation 1 image"
                 >
                   <img
                     class="experimental-variation-image lightbox-media"
                     src="assets/optimized/display/assets-scoby-experiment-ai-scoby-04-png-ce222c83.jpg"
-                    alt="Scoby experiment 1. variáció"
+                    alt="SCOBY kísérlet 1. variáció"
+                    data-alt-hu="SCOBY kísérlet 1. variáció"
+                    data-alt-en="SCOBY experiment variation 1"
                     loading="lazy"
                     data-lightbox-index="0"
                     data-lightbox-group="scoby-experiment"
                     data-media-type="image"
                     data-media-src="assets/optimized/full/assets-scoby-experiment-ai-scoby-04-png-ce222c83.jpg"
-                    data-media-alt="Scoby experiment 1. variáció"
+                    data-media-alt="SCOBY kísérlet 1. variáció"
+                    data-media-alt-hu="SCOBY kísérlet 1. variáció"
+                    data-media-alt-en="SCOBY experiment variation 1"
                     role="button"
                     tabindex="0"
                     decoding="async"
@@ -283,17 +315,23 @@
                 <div
                   class="experimental-variation-media"
                   aria-label="2. variáció képe"
+                  data-label-hu="2. variáció képe"
+                  data-label-en="Variation 2 image"
                 >
                   <img
                     class="experimental-variation-image lightbox-media"
                     src="assets/optimized/display/assets-scoby-experiment-ai-scoby-03-png-836bf7e2.jpg"
-                    alt="Scoby experiment 2. variáció"
+                    alt="SCOBY kísérlet 2. variáció"
+                    data-alt-hu="SCOBY kísérlet 2. variáció"
+                    data-alt-en="SCOBY experiment variation 2"
                     loading="lazy"
                     data-lightbox-index="1"
                     data-lightbox-group="scoby-experiment"
                     data-media-type="image"
                     data-media-src="assets/optimized/full/assets-scoby-experiment-ai-scoby-03-png-836bf7e2.jpg"
-                    data-media-alt="Scoby experiment 2. variáció"
+                    data-media-alt="SCOBY kísérlet 2. variáció"
+                    data-media-alt-hu="SCOBY kísérlet 2. variáció"
+                    data-media-alt-en="SCOBY experiment variation 2"
                     role="button"
                     tabindex="0"
                     decoding="async"
@@ -347,17 +385,23 @@
                 <div
                   class="experimental-variation-media"
                   aria-label="3. variáció képe"
+                  data-label-hu="3. variáció képe"
+                  data-label-en="Variation 3 image"
                 >
                   <img
                     class="experimental-variation-image lightbox-media"
                     src="assets/optimized/display/assets-scoby-experiment-ai-scoby-01-png-809a57a5.jpg"
-                    alt="Scoby experiment 3. variáció, első kép"
+                    alt="SCOBY kísérlet 3. variáció, első kép"
+                    data-alt-hu="SCOBY kísérlet 3. variáció, első kép"
+                    data-alt-en="SCOBY experiment variation 3, first image"
                     loading="lazy"
                     data-lightbox-index="2"
                     data-lightbox-group="scoby-experiment"
                     data-media-type="image"
                     data-media-src="assets/optimized/full/assets-scoby-experiment-ai-scoby-01-png-809a57a5.jpg"
-                    data-media-alt="Scoby experiment 3. variáció, első kép"
+                    data-media-alt="SCOBY kísérlet 3. variáció, első kép"
+                    data-media-alt-hu="SCOBY kísérlet 3. variáció, első kép"
+                    data-media-alt-en="SCOBY experiment variation 3, first image"
                     role="button"
                     tabindex="0"
                     decoding="async"
@@ -441,7 +485,7 @@
                   />
               </span>
               <h2 class="three-d-title category-work-title">
-                TouchDesigner Environment Modelling
+                <span lang="hu">TouchDesigner környezetmodellezés</span><span lang="en">TouchDesigner Environment Modelling</span>
               </h2>
             </a>
           </article>
@@ -453,7 +497,7 @@
                 aria-hidden="true"
               ></span>
               <h2 class="three-d-title category-work-title">
-                Unreal Engine Game Design
+                <span lang="hu">Unreal Engine játéktervezés</span><span lang="en">Unreal Engine Game Design</span>
               </h2>
             </a>
           </article>
@@ -468,19 +512,23 @@
             <img
               class="three-d-hero lightbox-media"
               src="assets/optimized/display/assets-soft-resdiue-soft-residue-triptichon-masolat-jpg-3d15a399.jpg"
-              alt="Soft Residue Triptichon"
+              alt="Soft Residue triptichon"
+              data-alt-hu="Soft Residue triptichon"
+              data-alt-en="Soft Residue triptych"
               data-lightbox-index="0"
               data-lightbox-group="soft-residue"
               data-media-type="image"
               data-media-src="assets/optimized/full/assets-soft-resdiue-soft-residue-triptichon-masolat-jpg-3d15a399.jpg"
-              data-media-alt="Soft Residue Triptichon"
+              data-media-alt="Soft Residue triptichon"
+              data-media-alt-hu="Soft Residue triptichon"
+              data-media-alt-en="Soft Residue triptych"
               role="button"
               tabindex="0"
                     loading="lazy"
                     decoding="async"
                     />
 
-            <div class="soft-residue-copy" aria-label="Soft Residue project text">
+            <div class="soft-residue-copy" aria-label="Soft Residue projektleírás" data-label-hu="Soft Residue projektleírás" data-label-en="Soft Residue project text">
               <div lang="hu">
                 <p>
                   A projekt egy triptichonként épül fel, három egymással
@@ -532,7 +580,7 @@
               </div>
             </div>
 
-            <div class="soft-residue-grid" aria-label="Soft Residue images">
+            <div class="soft-residue-grid" aria-label="Soft Residue képek" data-label-hu="Soft Residue képek" data-label-en="Soft Residue images">
               <figure>
                 <figcaption>Vanished</figcaption>
                 <img
@@ -691,7 +739,7 @@
       >
         <div class="three-d-work-list">
           <article class="three-d-project">
-            <h2 class="three-d-title">TouchDesigner Environment Modelling</h2>
+            <h2 class="three-d-title"><span lang="hu">TouchDesigner környezetmodellezés</span><span lang="en">TouchDesigner Environment Modelling</span></h2>
           </article>
         </div>
       </section>
@@ -699,7 +747,7 @@
       <section class="three-d-section tab-section" id="unreal-engine-game-design">
         <div class="three-d-work-list">
           <article class="three-d-project">
-            <h2 class="three-d-title">Unreal Engine Game Design</h2>
+            <h2 class="three-d-title"><span lang="hu">Unreal Engine játéktervezés</span><span lang="en">Unreal Engine Game Design</span></h2>
           </article>
         </div>
       </section>
@@ -726,7 +774,7 @@
                 class="category-work-thumb category-work-thumb--empty"
                 aria-hidden="true"
               ></span>
-              <h2 class="object-title category-work-title">Hair/Fur Project</h2>
+              <h2 class="object-title category-work-title"><span lang="hu">Szőr/haj projekt</span><span lang="en">Hair/Fur Project</span></h2>
             </a>
           </article>
 
@@ -736,7 +784,7 @@
                 class="category-work-thumb category-work-thumb--empty"
                 aria-hidden="true"
               ></span>
-              <h2 class="object-title category-work-title">SCOBY / Shell</h2>
+              <h2 class="object-title category-work-title"><span lang="hu">Hogy tovább ne repedjen</span><span lang="en">To keep it from splitting further</span></h2>
             </a>
           </article>
 
@@ -746,7 +794,7 @@
                 class="category-work-thumb category-work-thumb--empty"
                 aria-hidden="true"
               ></span>
-              <h2 class="object-title category-work-title">Őrizetlen Könyv</h2>
+              <h2 class="object-title category-work-title"><span lang="hu">Őrizetlen Könyv</span><span lang="en">Unguarded Book</span></h2>
             </a>
           </article>
         </div>
@@ -771,7 +819,7 @@
                     decoding="async"
                     />
 
-            <div class="object-project-copy">
+            <div class="object-project-copy" aria-label="Lobotomy Kit projektleírás" data-label-hu="Lobotomy Kit projektleírás" data-label-en="Lobotomy Kit project text">
               <div lang="hu">
                 <p>
                   Projektem kiindulópontja a mentálhigiéné egyik
@@ -861,16 +909,20 @@
               </div>
             </div>
 
-            <div class="object-project-grid" aria-label="Lobotomy Kit images">
+            <div class="object-project-grid" aria-label="Lobotomy Kit képek" data-label-hu="Lobotomy Kit képek" data-label-en="Lobotomy Kit images">
               <img
                 class="lightbox-media"
                 src="assets/optimized/display/assets-lobotomy-kit-forgo-artsy-01-png-8128c3be.jpg"
                 alt="Lobotomy Kit artsy részlet 01"
+                data-alt-hu="Lobotomy Kit artsy részlet 01"
+                data-alt-en="Lobotomy Kit artsy detail 01"
                 loading="lazy"
                 data-lightbox-index="1"
                 data-media-type="image"
                 data-media-src="assets/optimized/full/assets-lobotomy-kit-forgo-artsy-01-png-8128c3be.jpg"
                 data-media-alt="Lobotomy Kit artsy részlet 01"
+                data-media-alt-hu="Lobotomy Kit artsy részlet 01"
+                data-media-alt-en="Lobotomy Kit artsy detail 01"
                 role="button"
                 tabindex="0"
                     decoding="async"
@@ -879,11 +931,15 @@
                 class="lightbox-media"
                 src="assets/optimized/display/assets-lobotomy-kit-lobotomykit-02-png-0144956b.jpg"
                 alt="Lobotomy Kit részlet 02"
+                data-alt-hu="Lobotomy Kit részlet 02"
+                data-alt-en="Lobotomy Kit detail 02"
                 loading="lazy"
                 data-lightbox-index="2"
                 data-media-type="image"
                 data-media-src="assets/optimized/full/assets-lobotomy-kit-lobotomykit-02-png-0144956b.jpg"
                 data-media-alt="Lobotomy Kit részlet 02"
+                data-media-alt-hu="Lobotomy Kit részlet 02"
+                data-media-alt-en="Lobotomy Kit detail 02"
                 role="button"
                 tabindex="0"
                     decoding="async"
@@ -892,11 +948,15 @@
                 class="lightbox-media"
                 src="assets/optimized/display/assets-lobotomy-kit-lobotomykit-normal-04-masolat-png-56d2f01f.jpg"
                 alt="Lobotomy Kit normal részlet 04"
+                data-alt-hu="Lobotomy Kit normal részlet 04"
+                data-alt-en="Lobotomy Kit normal detail 04"
                 loading="lazy"
                 data-lightbox-index="3"
                 data-media-type="image"
                 data-media-src="assets/optimized/full/assets-lobotomy-kit-lobotomykit-normal-04-masolat-png-56d2f01f.jpg"
                 data-media-alt="Lobotomy Kit normal részlet 04"
+                data-media-alt-hu="Lobotomy Kit normal részlet 04"
+                data-media-alt-en="Lobotomy Kit normal detail 04"
                 role="button"
                 tabindex="0"
                     decoding="async"
@@ -905,11 +965,15 @@
                 class="lightbox-media"
                 src="assets/optimized/display/assets-lobotomy-kit-lobotomykit-03-masolat-png-b82ad52f.jpg"
                 alt="Lobotomy Kit részlet 03"
+                data-alt-hu="Lobotomy Kit részlet 03"
+                data-alt-en="Lobotomy Kit detail 03"
                 loading="lazy"
                 data-lightbox-index="4"
                 data-media-type="image"
                 data-media-src="assets/optimized/full/assets-lobotomy-kit-lobotomykit-03-masolat-png-b82ad52f.jpg"
                 data-media-alt="Lobotomy Kit részlet 03"
+                data-media-alt-hu="Lobotomy Kit részlet 03"
+                data-media-alt-en="Lobotomy Kit detail 03"
                 role="button"
                 tabindex="0"
                     decoding="async"
@@ -918,11 +982,15 @@
                 class="lightbox-media"
                 src="assets/optimized/display/assets-lobotomy-kit-lobotomykit-04-masolat-png-9c0a4eb5.jpg"
                 alt="Lobotomy Kit részlet 04"
+                data-alt-hu="Lobotomy Kit részlet 04"
+                data-alt-en="Lobotomy Kit detail 04"
                 loading="lazy"
                 data-lightbox-index="5"
                 data-media-type="image"
                 data-media-src="assets/optimized/full/assets-lobotomy-kit-lobotomykit-04-masolat-png-9c0a4eb5.jpg"
                 data-media-alt="Lobotomy Kit részlet 04"
+                data-media-alt-hu="Lobotomy Kit részlet 04"
+                data-media-alt-en="Lobotomy Kit detail 04"
                 role="button"
                 tabindex="0"
                     decoding="async"
@@ -931,11 +999,15 @@
                 class="lightbox-media"
                 src="assets/optimized/display/assets-lobotomy-kit-lobotomykit-05-masolat-png-e7146d7f.jpg"
                 alt="Lobotomy Kit részlet 05"
+                data-alt-hu="Lobotomy Kit részlet 05"
+                data-alt-en="Lobotomy Kit detail 05"
                 loading="lazy"
                 data-lightbox-index="6"
                 data-media-type="image"
                 data-media-src="assets/optimized/full/assets-lobotomy-kit-lobotomykit-05-masolat-png-e7146d7f.jpg"
                 data-media-alt="Lobotomy Kit részlet 05"
+                data-media-alt-hu="Lobotomy Kit részlet 05"
+                data-media-alt-en="Lobotomy Kit detail 05"
                 role="button"
                 tabindex="0"
                     decoding="async"
@@ -945,12 +1017,16 @@
             <img
               class="object-project-video lightbox-media"
               src="assets/optimized/display/assets-lobotomy-kit-lobotomykit-06-poster-2s-png-57845a29.jpg"
-              alt="Lobotomy Kit video still"
+              alt="Lobotomy Kit videó állókép"
+              data-alt-hu="Lobotomy Kit videó állókép"
+              data-alt-en="Lobotomy Kit video still"
               loading="lazy"
               data-lightbox-index="7"
               data-media-type="image"
               data-media-src="assets/optimized/full/assets-lobotomy-kit-lobotomykit-06-poster-2s-png-57845a29.jpg"
-              data-media-alt="Lobotomy Kit video still"
+              data-media-alt="Lobotomy Kit videó állókép"
+              data-media-alt-hu="Lobotomy Kit videó állókép"
+              data-media-alt-en="Lobotomy Kit video still"
               role="button"
               tabindex="0"
               decoding="async"
@@ -962,7 +1038,7 @@
       <section class="objects-section tab-section" id="hair-fur-project">
         <div class="object-work-list">
           <article class="object-work object-project">
-            <h2 class="object-title">Hair/Fur Project</h2>
+            <h2 class="object-title"><span lang="hu">Szőr/haj projekt</span><span lang="en">Hair/Fur Project</span></h2>
           </article>
         </div>
       </section>
@@ -970,7 +1046,7 @@
       <section class="objects-section tab-section" id="scoby-shell">
         <div class="object-work-list">
           <article class="object-work object-project">
-            <h2 class="object-title">SCOBY / Shell</h2>
+            <h2 class="object-title"><span lang="hu">Hogy tovább ne repedjen</span><span lang="en">To keep it from splitting further</span></h2>
           </article>
         </div>
       </section>
@@ -978,87 +1054,167 @@
       <section class="objects-section tab-section" id="orizetlen-konyv">
         <div class="object-work-list">
           <article class="object-work object-project">
-            <h2 class="object-title">Őrizetlen Könyv</h2>
+            <h2 class="object-title"><span lang="hu">Őrizetlen Könyv</span><span lang="en">Unguarded Book</span></h2>
           </article>
         </div>
       </section>
 
       <section class="cv-section tab-section" id="cv">
         <div class="cv-intro">
-          <p>
+          <p lang="hu">
             Vizuális alkotóként a digitális képalkotás, a spekulatív tárgyak,
             az anyagkísérletek és a testhez kapcsolódó technológiai határhelyzetek
             érdekelnek. A munkáim gyakran olyan állapotokat vizsgálnak, ahol a
             kép, az objektum vagy az élő anyag egyszerre ismerős és idegenszerű.
           </p>
-          <p>
+          <p lang="hu">
             Foglalkoztatnak a soft interface-ek, a médiaarcheológia, a bioanyagok,
             a 3D alapú világépítés és azok a rendszerek, amelyekben a néző
             mozgása, érzékelése vagy jelenléte alakítja a mű végső formáját.
             A projektjeimben az átalakulás, az instabil kép, a poszthumán test
             és a technológiai emlékezet visszatérő irányok.
           </p>
+          <p lang="en">
+            As a visual creator, I am interested in digital image-making,
+            speculative objects, material experiments, and technological
+            boundary situations connected to the body. My works often examine
+            states in which an image, object, or living material feels both
+            familiar and alien.
+          </p>
+          <p lang="en">
+            I work with soft interfaces, media archaeology, biomaterials,
+            3D-based worldbuilding, and systems in which the viewer's movement,
+            perception, or presence shapes the final form of the work.
+            Transformation, unstable images, the posthuman body, and
+            technological memory are recurring directions in my projects.
+          </p>
         </div>
 
-        <h3>Professional Experience</h3>
-        <ul>
-          <li>
-            <strong>CODEPUNK</strong> - Internship (February 2026): Applied
-            AI-based creative tools experimentally in personal projects,
-            including the production of concert visuals and promotional
-            materials.
-          </li>
-          <li>
-            <strong>PAPRIKA STUDIOS / RTL</strong> - Social Media Manager (April
-            2024 - August 2024): Planning and creating creative visual and video
-            content for TV show social media platforms, and aligning visual
-            communication to program formats.
-          </li>
-          <li>
-            <strong>PADON FOUNDATION</strong> - Project Assistant (May 2021 -
-            April 2023): Coordinated events and programs, and maintained
-            communication with partners and local communities.
-          </li>
-        </ul>
+        <div lang="hu">
+          <h3>Szakmai tapasztalat</h3>
+          <ul>
+            <li>
+              <strong>CODEPUNK</strong> - Gyakornoki munka (2026. február):
+              AI-alapú kreatív eszközök kísérleti alkalmazása saját projektekben,
+              többek között koncertvizuálok és promóciós anyagok készítése.
+            </li>
+            <li>
+              <strong>PAPRIKA STUDIOS / RTL</strong> - Közösségimédia-menedzser
+              (2024. április - 2024. augusztus): kreatív vizuális és videós
+              tartalmak tervezése és készítése televíziós műsorok social media
+              felületeire, a vizuális kommunikáció műsorformátumokhoz igazítása.
+            </li>
+            <li>
+              <strong>PADON FOUNDATION</strong> - Projektasszisztens
+              (2021. május - 2023. április): események és programok
+              koordinálása, kapcsolattartás partnerekkel és helyi közösségekkel.
+            </li>
+          </ul>
 
-        <h3>Studies</h3>
-        <ul>
-          <li>
-            <strong>Media Design MA</strong>, Moholy-Nagy University of Art and
-            Design (2025-)
-          </li>
-          <li>
-            <strong>Design Culture BA</strong>, Moholy-Nagy University of
-            Art and Design (2017-2022)
-          </li>
-        </ul>
+          <h3>Tanulmányok</h3>
+          <ul>
+            <li>
+              <strong>Media Design MA</strong>, Moholy-Nagy Művészeti Egyetem
+              (2025-)
+            </li>
+            <li>
+              <strong>Designkultúra BA</strong>, Moholy-Nagy Művészeti Egyetem
+              (2017-2022)
+            </li>
+          </ul>
 
-        <h3>Skills & Languages</h3>
-        <ul>
-          <li>
-            <strong>3D Skills:</strong> Blender, KeyShot, Unreal Engine,
-            Substance Painter, TouchDesigner
-          </li>
-          <li>
-            <strong>Adobe Skills:</strong> Photoshop, Premiere Pro, After
-            Effects, InDesign
-          </li>
-          <li><strong>AI Tools:</strong> Active use and experimentation</li>
-          <li>
-            <strong>Languages:</strong> Hungarian (Native), English
-            (Intermediate B2, primarily spoken)
-          </li>
-        </ul>
+          <h3>Készségek és nyelvek</h3>
+          <ul>
+            <li>
+              <strong>3D készségek:</strong> Blender, KeyShot, Unreal Engine,
+              Substance Painter, TouchDesigner
+            </li>
+            <li>
+              <strong>Adobe készségek:</strong> Photoshop, Premiere Pro, After
+              Effects, InDesign
+            </li>
+            <li><strong>AI eszközök:</strong> aktív használat és kísérletezés</li>
+            <li>
+              <strong>Nyelvek:</strong> magyar (anyanyelv), angol
+              (középfok B2, főként beszéd)
+            </li>
+          </ul>
 
-        <h3>Volunteering</h3>
-        <ul>
-          <li><strong>Dobozi 21</strong> (2024)</li>
-          <li><strong>Faur Zsofi Gallery</strong> (September 2020 - June 2021)</li>
-          <li><strong>OFF-Biennale</strong> (2020)</li>
-        </ul>
+          <h3>Önkéntesség</h3>
+          <ul>
+            <li><strong>Dobozi 21</strong> (2024)</li>
+            <li><strong>Faur Zsófi Galéria</strong> (2020. szeptember - 2021. június)</li>
+            <li><strong>OFF-Biennále</strong> (2020)</li>
+          </ul>
+        </div>
 
-        <p>
+        <div lang="en">
+          <h3>Professional Experience</h3>
+          <ul>
+            <li>
+              <strong>CODEPUNK</strong> - Internship (February 2026): Applied
+              AI-based creative tools experimentally in personal projects,
+              including the production of concert visuals and promotional
+              materials.
+            </li>
+            <li>
+              <strong>PAPRIKA STUDIOS / RTL</strong> - Social Media Manager
+              (April 2024 - August 2024): Planned and created creative visual
+              and video content for TV show social media platforms, aligning
+              visual communication with program formats.
+            </li>
+            <li>
+              <strong>PADON FOUNDATION</strong> - Project Assistant (May 2021 -
+              April 2023): Coordinated events and programs, and maintained
+              communication with partners and local communities.
+            </li>
+          </ul>
+
+          <h3>Studies</h3>
+          <ul>
+            <li>
+              <strong>Media Design MA</strong>, Moholy-Nagy University of Art and
+              Design (2025-)
+            </li>
+            <li>
+              <strong>Design Culture BA</strong>, Moholy-Nagy University of
+              Art and Design (2017-2022)
+            </li>
+          </ul>
+
+          <h3>Skills & Languages</h3>
+          <ul>
+            <li>
+              <strong>3D Skills:</strong> Blender, KeyShot, Unreal Engine,
+              Substance Painter, TouchDesigner
+            </li>
+            <li>
+              <strong>Adobe Skills:</strong> Photoshop, Premiere Pro, After
+              Effects, InDesign
+            </li>
+            <li><strong>AI Tools:</strong> active use and experimentation</li>
+            <li>
+              <strong>Languages:</strong> Hungarian (native), English
+              (intermediate B2, primarily spoken)
+            </li>
+          </ul>
+
+          <h3>Volunteering</h3>
+          <ul>
+            <li><strong>Dobozi 21</strong> (2024)</li>
+            <li><strong>Faur Zsofi Gallery</strong> (September 2020 - June 2021)</li>
+            <li><strong>OFF-Biennale</strong> (2020)</li>
+          </ul>
+        </div>
+
+        <p lang="hu">
           Teljes önéletrajz:
+          <a href="assets/RESUME_Dóra_Vajas.pdf" target="_blank"
+            >RESUME_Dóra_Vajas.pdf</a
+          >
+        </p>
+        <p lang="en">
+          Full CV:
           <a href="assets/RESUME_Dóra_Vajas.pdf" target="_blank"
             >RESUME_Dóra_Vajas.pdf</a
           >
@@ -1066,9 +1222,9 @@
       </section>
 
       <section class="contact-section tab-section" id="contact">
-        <h2>Contact</h2>
+        <h2><span lang="hu">Kapcsolat</span><span lang="en">Contact</span></h2>
         <p>
-          Email:
+          <span lang="hu">E-mail:</span><span lang="en">Email:</span>
           <a href="mailto:wajasdora@gmail.com">wajasdora@gmail.com</a>
         </p>
         <p>
@@ -1081,25 +1237,29 @@
     </main>
 
     <div class="media-lightbox" id="mediaLightbox" aria-hidden="true">
-      <button class="lightbox-close" type="button" aria-label="Close">x</button>
-      <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous">
+      <button class="lightbox-close" type="button" aria-label="Bezárás" data-label-hu="Bezárás" data-label-en="Close">x</button>
+      <button class="lightbox-nav lightbox-prev" type="button" aria-label="Előző" data-label-hu="Előző" data-label-en="Previous">
         &lt;
       </button>
       <button
         class="lightbox-preview lightbox-preview-prev"
         type="button"
-        aria-label="Previous preview"
+        aria-label="Előző előnézet"
+        data-label-hu="Előző előnézet"
+        data-label-en="Previous preview"
       ></button>
       <div class="lightbox-stage" aria-live="polite"></div>
       <button
         class="lightbox-preview lightbox-preview-next"
         type="button"
-        aria-label="Next preview"
+        aria-label="Következő előnézet"
+        data-label-hu="Következő előnézet"
+        data-label-en="Next preview"
       ></button>
-      <button class="lightbox-nav lightbox-next" type="button" aria-label="Next">
+      <button class="lightbox-nav lightbox-next" type="button" aria-label="Következő" data-label-hu="Következő" data-label-en="Next">
         &gt;
       </button>
-      <div class="lightbox-thumbs" aria-label="Image sequence thumbnails"></div>
+      <div class="lightbox-thumbs" aria-label="Képsorozat bélyegképei" data-label-hu="Képsorozat bélyegképei" data-label-en="Image sequence thumbnails"></div>
     </div>
 
     <script>
@@ -1115,28 +1275,82 @@
       const lightboxPreviewPrev = document.querySelector(".lightbox-preview-prev");
       const lightboxPreviewNext = document.querySelector(".lightbox-preview-next");
       const lightboxThumbs = document.querySelector(".lightbox-thumbs");
-      const allLightboxItems = Array.from(
-        document.querySelectorAll(".lightbox-media")
-      ).map((item, domIndex) => ({
-          element: item,
-          group: item.dataset.lightboxGroup || "default",
-          order: Number(item.dataset.lightboxIndex || domIndex),
-          type: item.dataset.mediaType,
-          src: item.dataset.mediaSrc || item.getAttribute("src"),
-          poster: item.dataset.mediaPoster || "",
-          thumb:
-            item.dataset.mediaThumb ||
-            item.getAttribute("src") ||
-            item.dataset.mediaPoster ||
-            "",
-          alt: item.dataset.mediaAlt || item.getAttribute("alt") || "",
-        }));
+      const languageButtons = document.querySelectorAll("[data-language]");
+      const supportedLanguages = ["hu", "en"];
+      const defaultLanguage = "hu";
+      let allLightboxItems = [];
       let lightboxItems = [];
       let currentLightboxIndex = 0;
+      let currentLanguage = defaultLanguage;
       let lightboxTouchStartX = 0;
       let lightboxWheelLocked = false;
       let lastScrollY = window.scrollY;
       let scrollTicking = false;
+
+      function translateAttribute(selector, targetAttribute, huAttribute, enAttribute) {
+        document.querySelectorAll(selector).forEach((element) => {
+          const sourceAttribute = currentLanguage === "hu" ? huAttribute : enAttribute;
+          const value = element.getAttribute(sourceAttribute);
+
+          if (value !== null) {
+            element.setAttribute(targetAttribute, value);
+          }
+        });
+      }
+
+      function refreshLightboxItems() {
+        allLightboxItems = Array.from(
+          document.querySelectorAll(".lightbox-media")
+        ).map((item, domIndex) => ({
+            element: item,
+            group: item.dataset.lightboxGroup || "default",
+            order: Number(item.dataset.lightboxIndex || domIndex),
+            type: item.dataset.mediaType,
+            src: item.dataset.mediaSrc || item.getAttribute("src"),
+            poster: item.dataset.mediaPoster || "",
+            thumb:
+              item.dataset.mediaThumb ||
+              item.getAttribute("src") ||
+              item.dataset.mediaPoster ||
+              "",
+            alt: item.dataset.mediaAlt || item.getAttribute("alt") || "",
+          }));
+      }
+
+      function setLanguage(language) {
+        currentLanguage = supportedLanguages.includes(language)
+          ? language
+          : defaultLanguage;
+
+        document.documentElement.lang = currentLanguage;
+        document.documentElement.dataset.language = currentLanguage;
+        document.title = "Vajas-Klicsu Dóra";
+
+        translateAttribute("[data-label-hu][data-label-en]", "aria-label", "data-label-hu", "data-label-en");
+        translateAttribute("[data-alt-hu][data-alt-en]", "alt", "data-alt-hu", "data-alt-en");
+        translateAttribute(
+          "[data-media-alt-hu][data-media-alt-en]",
+          "data-media-alt",
+          "data-media-alt-hu",
+          "data-media-alt-en"
+        );
+
+        languageButtons.forEach((button) => {
+          const isActive = button.dataset.language === currentLanguage;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+
+        refreshLightboxItems();
+
+        if (lightbox.classList.contains("is-open")) {
+          const activeElement = lightboxItems[currentLightboxIndex]?.element;
+
+          if (activeElement) {
+            openLightbox(activeElement);
+          }
+        }
+      }
 
       function revealNav() {
         if (topNav) topNav.classList.remove("is-hidden");
@@ -1344,7 +1558,9 @@
 
           button.type = "button";
           button.className = "lightbox-thumb";
-          button.setAttribute("aria-label", item.alt || `Image ${index + 1}`);
+          const fallbackLabel =
+            currentLanguage === "hu" ? `Kép ${index + 1}` : `Image ${index + 1}`;
+          button.setAttribute("aria-label", item.alt || fallbackLabel);
 
           if (index === currentLightboxIndex) {
             button.classList.add("is-active");
@@ -1488,6 +1704,13 @@
         link.addEventListener("mouseleave", () => stopSparkleStream(link));
       });
 
+      languageButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          setLanguage(button.dataset.language);
+        });
+      });
+
+      setLanguage(defaultLanguage);
       window.addEventListener("hashchange", showSectionFromHash);
       window.addEventListener(
         "scroll",

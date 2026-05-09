@@ -3429,90 +3429,6 @@ body::after {
   transform: none;
 }
 
-html[data-language="hu"] [lang="en"],
-html[data-language="en"] [lang="hu"],
-html[lang="hu"] [lang="en"],
-html[lang="en"] [lang="hu"] {
-  display: none !important;
-}
-
-.language-switch {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  min-height: 18px;
-}
-
-.language-switch button {
-  appearance: none;
-  border: 0;
-  border-bottom: 1px solid transparent;
-  border-radius: 0;
-  padding: 2px 1px;
-  color: rgba(36, 39, 36, 0.58);
-  background: transparent;
-  font: inherit;
-  font-size: 10px;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0;
-  cursor: pointer;
-  transition: color 0.2s ease, border-color 0.2s ease, text-shadow 0.2s ease;
-}
-
-.language-switch button:hover,
-.language-switch button:focus-visible,
-.language-switch button.is-active {
-  color: rgba(36, 39, 36, 0.96);
-  border-color: currentColor;
-  text-shadow: 0 0 18px rgba(118, 123, 111, 0.34);
-}
-
-.language-switch button:focus-visible {
-  outline: 1px solid currentColor;
-  outline-offset: 4px;
-}
-
-html[data-language] .experimental-copy,
-html[data-language] .soft-residue-copy,
-html[data-language] .object-project-copy {
-  grid-template-columns: minmax(0, 1fr);
-  width: min(760px, 100%);
-  column-gap: 0;
-}
-
-html[data-language] .experimental-variation-text {
-  grid-template-columns: minmax(0, 1fr);
-  max-width: 680px;
-  column-gap: 0;
-}
-
-html[data-language] .experimental-variation-text h3[lang],
-html[data-language] .experimental-variation-text p[lang],
-html[data-language] .soft-residue-copy > [lang] > *,
-html[data-language] .object-project-copy > [lang] > * {
-  grid-column: 1 !important;
-}
-
-@media (max-width: 860px) {
-  .top-nav {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .language-switch {
-    justify-content: center;
-    width: 100%;
-    min-height: 36px;
-    gap: 8px;
-  }
-
-  .language-switch button {
-    min-height: 36px;
-    padding: 0 2px;
-    font-size: 10px;
-  }
-}
-
 /* Editorial collage redesign */
 :root {
   --ed-paper: #f7f6f1;
@@ -3635,7 +3551,7 @@ body.editorial-site::after {
 
 .editorial-site .top-nav {
   top: 20px;
-  right: calc(var(--ed-space) + 76px);
+  right: var(--ed-space);
   display: grid;
   grid-template-columns: repeat(3, auto);
   align-items: start;
@@ -3646,8 +3562,7 @@ body.editorial-site::after {
   border: 0;
 }
 
-.editorial-site .top-nav a,
-.editorial-site .language-switch button {
+.editorial-site .top-nav a {
   position: relative;
   min-height: 0;
   padding: 0 0 3px;
@@ -3681,32 +3596,11 @@ body.editorial-site::after {
 
 .editorial-site .top-nav a:hover,
 .editorial-site .top-nav a:focus-visible,
-.editorial-site .top-nav a.active,
-.editorial-site .language-switch button:hover,
-.editorial-site .language-switch button:focus-visible,
-.editorial-site .language-switch button.is-active {
+.editorial-site .top-nav a.active {
   color: var(--ed-red);
   border-color: currentColor;
   text-shadow: none;
   filter: none;
-}
-
-.editorial-site .language-switch {
-  display: flex;
-  align-items: flex-start;
-  gap: 7px;
-  min-height: 0;
-}
-
-.editorial-site .site-language-switch {
-  position: fixed;
-  top: 20px;
-  right: var(--ed-space);
-  z-index: 10;
-}
-
-.editorial-site .language-switch button {
-  cursor: pointer;
 }
 
 .editorial-site .tab-section {
@@ -4440,32 +4334,8 @@ body.editorial-site::after {
     display: none;
   }
 
-  .editorial-site .language-switch {
-    justify-content: center;
-    gap: 8px;
-    min-height: 0;
-    border: 0;
-    background: transparent;
-    backdrop-filter: none;
-  }
-
-  .editorial-site .site-language-switch {
-    top: 119px;
-    left: 0;
-    right: auto;
-    width: 100vw;
-    z-index: 12;
-    padding: 4px 5px 3px;
-    background: rgba(247, 246, 241, 0.88);
-  }
-
-  .editorial-site .language-switch button {
-    min-height: 0;
-    font-size: 10px;
-  }
-
   .editorial-site .overlay-content {
-    padding: 154px 17px 52px;
+    padding: 126px 17px 52px;
   }
 
   .editorial-site .about-projects,
@@ -4547,8 +4417,7 @@ body.editorial-site::after {
     font-size: 25px;
   }
 
-  .editorial-site .top-nav,
-  .editorial-site .site-language-switch {
+  .editorial-site .top-nav {
     width: min(100vw, 390px) !important;
   }
 

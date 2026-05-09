@@ -10,7 +10,13 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <style>
+      html[data-language="hu"] [lang="en"],
+      html[data-language="en"] [lang="hu"] {
+        display: none !important;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css?v=20260509-2" />
   </head>
   <body>
     <main class="overlay-content">
@@ -1275,7 +1281,9 @@
       const lightboxPreviewPrev = document.querySelector(".lightbox-preview-prev");
       const lightboxPreviewNext = document.querySelector(".lightbox-preview-next");
       const lightboxThumbs = document.querySelector(".lightbox-thumbs");
-      const languageButtons = document.querySelectorAll("[data-language]");
+      const languageButtons = document.querySelectorAll(
+        ".language-switch button[data-language]"
+      );
       const supportedLanguages = ["hu", "en"];
       const defaultLanguage = "hu";
       let allLightboxItems = [];

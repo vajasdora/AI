@@ -3429,6 +3429,8 @@ body::after {
   transform: none;
 }
 
+html[data-language="hu"] [lang="en"],
+html[data-language="en"] [lang="hu"],
 html[lang="hu"] [lang="en"],
 html[lang="en"] [lang="hu"] {
   display: none !important;

@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vajas-Klicsu Dóra</title>
+    <title>Első Oldal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260509-5" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="editorial-site">
+  <body>
     <main class="overlay-content">
       <nav class="top-nav" aria-label="Fő menü">
         <a href="#works">works</a>
@@ -31,7 +31,7 @@
               class="about-project-image-soft"
               src="assets/optimized/display/assets-soft-resdiue-2-mud-castle-png-acd84774.jpg"
               alt=""
-              loading="eager"
+              loading="lazy"
               decoding="async"
               />
             <span class="work-frame" aria-hidden="true"></span>
@@ -42,7 +42,7 @@
             <img
               src="assets/optimized/display/assets-scoby-experiment-ai-scoby-01-png-809a57a5.jpg"
               alt=""
-              loading="eager"
+              loading="lazy"
               decoding="async"
               />
             <span class="work-frame" aria-hidden="true"></span>
@@ -54,7 +54,7 @@
               class="about-project-image-lobotomy"
               src="assets/optimized/display/assets-lobotomy-kit-forgo-artsy-01-png-8128c3be.jpg"
               alt=""
-              loading="eager"
+              loading="lazy"
               decoding="async"
               />
             <span class="work-frame" aria-hidden="true"></span>
@@ -69,7 +69,7 @@
             <img
               src="assets/optimized/display/assets-touchdesigner-untitled07-png-724be5b0.png"
               alt=""
-              loading="eager"
+              loading="lazy"
               decoding="async"
               />
             <span class="work-frame" aria-hidden="true"></span>
@@ -1157,13 +1157,13 @@
       }
 
       function showSectionFromHash() {
-        const hash = window.location.hash || "#about";
+        const hash = window.location.hash || "#cv";
         const hashTarget = document.querySelector(hash);
         const activeSection =
           hashTarget && hashTarget.classList.contains("tab-section")
             ? hashTarget
             : hashTarget && hashTarget.closest(".tab-section");
-        let shownHash = "#about";
+        let shownHash = "#cv";
         let scrollTarget = null;
 
         sections.forEach((section) => {
@@ -1175,7 +1175,7 @@
           shownHash = `#${activeSection.id}`;
           scrollTarget = hashTarget !== activeSection ? hashTarget : null;
         } else {
-          document.querySelector("#about").style.display = "block";
+          document.querySelector("#cv").style.display = "block";
         }
 
         const isWorksSubsection =

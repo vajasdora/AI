@@ -1,6 +1,2 @@
 # Keep video exports out of Git history.
 *.mp4
-
-# Local browser test artifacts.
-chrome-profile-temp*/
-screen*.png

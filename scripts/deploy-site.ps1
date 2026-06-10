@@ -60,8 +60,29 @@ try {
     exit 0
   }
 
-  & $git add elso-oldal.html index.html styles.css CNAME assets .github scripts .cursor
-  & $git add -u -- elso-oldal.html index.html styles.css CNAME assets .github scripts .cursor
+  $sitePaths = @(
+    "elso-oldal.html",
+    "index.html",
+    "styles.css",
+    "CNAME",
+    "assets",
+    ".github",
+    "scripts",
+    ".cursor"
+  )
+
+  foreach ($path in $sitePaths) {
+    if (-not (Test-Path $path)) {
+      continue
+    }
+
+    & $git add -u -- $path
+  }
+
+  $newFiles = & $git ls-files --others --exclude-standard -- $sitePaths
+  if ($newFiles) {
+    & $git add -- $newFiles
+  }
 
   $staged = & $git diff --cached --name-only
   if (-not $staged) {

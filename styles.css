@@ -292,7 +292,7 @@ body::before {
 
 .works-section {
   width: min(1120px, calc(100vw - 68px));
-  margin: 0 auto;
+  margin: 0 auto 80px;
   color: #eef1f4;
 }
 
@@ -3393,30 +3393,12 @@ body::after {
     justify-content: initial;
   }
 
-  .work-categories {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-    width: 100%;
-    margin-left: 0;
-    align-items: stretch;
-    justify-content: initial;
-  }
-
-  .about-project-card,
-  .work-category {
+  .about-project-card {
     width: 100%;
     min-width: 0;
     min-height: 0;
     margin-top: 0 !important;
-  }
-
-  .about-project-card {
     aspect-ratio: 4 / 5;
-  }
-
-  .work-category {
-    aspect-ratio: 2 / 3;
   }
 }
 

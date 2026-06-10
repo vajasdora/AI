@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=mosaic-2" />
   </head>
   <body>
     <main class="overlay-content">
@@ -1071,13 +1071,13 @@
       }
 
       function showSectionFromHash() {
-        const hash = window.location.hash || "#cv";
+        const hash = window.location.hash || "#about";
         const hashTarget = document.querySelector(hash);
         const activeSection =
           hashTarget && hashTarget.classList.contains("tab-section")
             ? hashTarget
             : hashTarget && hashTarget.closest(".tab-section");
-        let shownHash = "#cv";
+        let shownHash = "#about";
         let scrollTarget = null;
 
         sections.forEach((section) => {
@@ -1089,7 +1089,7 @@
           shownHash = `#${activeSection.id}`;
           scrollTarget = hashTarget !== activeSection ? hashTarget : null;
         } else {
-          document.querySelector("#cv").style.display = "block";
+          document.querySelector("#about").style.display = "block";
         }
 
         const isWorksSubsection =

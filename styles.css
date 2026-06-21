@@ -1006,6 +1006,10 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
   margin-top: 34px;
 }
 
+.object-project-grid--stack {
+  grid-template-columns: 1fr;
+}
+
 .object-project-grid img,
 .object-project-video {
   display: block;

@@ -148,6 +148,22 @@ foreach ($entry in $imageMap) {
   Write-Host "Optimized $($entry.Base): display ${displaySize}KB, full ${fullSize}KB"
 }
 
+$drainSource = Get-ChildItem (Join-Path $root "assets") -Recurse -File |
+  Where-Object { $_.Name -eq "11_szerk_drain.png" } |
+  Select-Object -First 1
+
+if ($drainSource) {
+  $displayPath = Join-Path $displayDir "11-szerk-drain.jpg"
+  $fullPath = Join-Path $fullDir "11-szerk-drain.jpg"
+  Save-OptimizedImage -SourcePath $drainSource.FullName -DestPath $displayPath -MaxWidth 1200 -Quality 84
+  Save-OptimizedImage -SourcePath $drainSource.FullName -DestPath $fullPath -MaxWidth 2200 -Quality 90
+  $displaySize = [math]::Round((Get-Item $displayPath).Length / 1KB, 0)
+  $fullSize = [math]::Round((Get-Item $fullPath).Length / 1KB, 0)
+  Write-Host "Optimized 11-szerk-drain: display ${displaySize}KB, full ${fullSize}KB"
+} else {
+  Write-Warning "Missing source image: 11_szerk_drain.png"
+}
+
 $ffmpeg = Find-Ffmpeg
 $videoMap = @(
   @{ Source = "HT_01_VIDEO.mp4"; Base = "ht-01" },

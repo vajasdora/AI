@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>Első Oldal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -10,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=lang-1" />
+    <link rel="stylesheet" href="styles.css?v=lang-2" />
   </head>
   <body class="site-lang-hu">
     <main class="overlay-content">
@@ -18,25 +21,26 @@
         <a href="#works">works</a>
         <a href="#cv">cv</a>
         <a href="#contact">contact</a>
-        <div class="lang-switch" role="group" aria-label="Nyelv">
-          <button
-            type="button"
-            class="lang-switch__btn is-active"
-            data-lang="hu"
-            aria-pressed="true"
-          >
-            HUN
-          </button>
-          <button
-            type="button"
-            class="lang-switch__btn"
-            data-lang="en"
-            aria-pressed="false"
-          >
-            ENG
-          </button>
-        </div>
       </nav>
+
+      <div class="lang-switch" role="group" aria-label="Nyelv">
+        <button
+          type="button"
+          class="lang-switch__btn is-active"
+          data-lang="hu"
+          aria-pressed="true"
+        >
+          HUN
+        </button>
+        <button
+          type="button"
+          class="lang-switch__btn"
+          data-lang="en"
+          aria-pressed="false"
+        >
+          ENG
+        </button>
+      </div>
 
       <h1 class="name">
         <a href="#about">VAJAS-KLICSU DÓRA</a>

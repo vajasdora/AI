@@ -1,2 +1,3 @@
-# Keep video exports out of Git history.
+# Keep raw video exports out of Git history.
 *.mp4
+!assets/haztartasi-transzcendencia/video/*.mp4

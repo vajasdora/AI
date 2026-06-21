@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=ht-3" />
+    <link rel="stylesheet" href="styles.css?v=ht-4" />
   </head>
   <body class="site-lang-hu">
     <main class="overlay-content">
@@ -1070,19 +1070,35 @@
               class="object-project-grid"
               aria-label="Háztartási transzcendencia légkeringető munkák"
             >
-              <video
-                class="object-project-inline-video"
-                poster="assets/haztartasi-transzcendencia/display/ht-01.jpg"
-                data-src="assets/haztartasi-transzcendencia/video/ht-01.mp4"
-                loop
-                playsinline
-                preload="none"
-                aria-label="Háztartási transzcendencia HT 01 video"
-                role="button"
-                tabindex="0"
-              ></video>
+              <div class="object-project-video-cell">
+                <video
+                  class="object-project-inline-video protected-media"
+                  poster="assets/haztartasi-transzcendencia/display/ht-01.jpg"
+                  data-src-low="assets/haztartasi-transzcendencia/video/ht-01-low.mp4"
+                  data-src-medium="assets/haztartasi-transzcendencia/video/ht-01-medium.mp4"
+                  data-src-high="assets/haztartasi-transzcendencia/video/ht-01-high.mp4"
+                  data-video-id="ht-01"
+                  loop
+                  playsinline
+                  preload="none"
+                  aria-label="Háztartási transzcendencia HT 01 video"
+                  role="button"
+                  tabindex="0"
+                ></video>
+                <div class="video-quality" role="group" aria-label="Videó minőség">
+                  <button type="button" class="video-quality__btn" data-quality="low">
+                    <span lang="hu">Alacsony</span><span lang="en">Low</span>
+                  </button>
+                  <button type="button" class="video-quality__btn" data-quality="medium">
+                    <span lang="hu">Közepes</span><span lang="en">Medium</span>
+                  </button>
+                  <button type="button" class="video-quality__btn" data-quality="high">
+                    <span lang="hu">Magas</span><span lang="en">High</span>
+                  </button>
+                </div>
+              </div>
               <img
-                class="lightbox-media"
+                class="lightbox-media protected-media"
                 src="assets/haztartasi-transzcendencia/display/ht-02.jpg"
                 alt="Háztartási transzcendencia HT 02"
                 loading="lazy"
@@ -1094,18 +1110,35 @@
                 role="button"
                 tabindex="0"
                 decoding="async"
+                draggable="false"
               />
-              <video
-                class="object-project-inline-video"
-                poster="assets/haztartasi-transzcendencia/display/ht-03.jpg"
-                data-src="assets/haztartasi-transzcendencia/video/ht-03.mp4"
-                loop
-                playsinline
-                preload="none"
-                aria-label="Háztartási transzcendencia HT 03 video"
-                role="button"
-                tabindex="0"
-              ></video>
+              <div class="object-project-video-cell">
+                <video
+                  class="object-project-inline-video protected-media"
+                  poster="assets/haztartasi-transzcendencia/display/ht-03.jpg"
+                  data-src-low="assets/haztartasi-transzcendencia/video/ht-03-low.mp4"
+                  data-src-medium="assets/haztartasi-transzcendencia/video/ht-03-medium.mp4"
+                  data-src-high="assets/haztartasi-transzcendencia/video/ht-03-high.mp4"
+                  data-video-id="ht-03"
+                  loop
+                  playsinline
+                  preload="none"
+                  aria-label="Háztartási transzcendencia HT 03 video"
+                  role="button"
+                  tabindex="0"
+                ></video>
+                <div class="video-quality" role="group" aria-label="Videó minőség">
+                  <button type="button" class="video-quality__btn" data-quality="low">
+                    <span lang="hu">Alacsony</span><span lang="en">Low</span>
+                  </button>
+                  <button type="button" class="video-quality__btn" data-quality="medium">
+                    <span lang="hu">Közepes</span><span lang="en">Medium</span>
+                  </button>
+                  <button type="button" class="video-quality__btn" data-quality="high">
+                    <span lang="hu">Magas</span><span lang="en">High</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </article>
         </div>
@@ -1696,6 +1729,7 @@
           video.muted = true;
           video.playsInline = true;
           video.autoplay = true;
+          hardenMediaElement(video);
           lightboxStage.appendChild(video);
           return;
         }
@@ -1704,6 +1738,7 @@
         image.src = item.src;
         image.alt = item.alt;
         image.decoding = "async";
+        hardenMediaElement(image);
         lightboxStage.appendChild(image);
       }
 
@@ -1727,6 +1762,7 @@
         image.alt = "";
         image.loading = "lazy";
         image.decoding = "async";
+        hardenMediaElement(image);
         container.appendChild(image);
       }
 
@@ -1757,6 +1793,7 @@
           image.alt = "";
           image.loading = "lazy";
           image.decoding = "async";
+          hardenMediaElement(image);
 
           button.appendChild(image);
           button.addEventListener("click", () => {
@@ -1890,9 +1927,156 @@
         link.addEventListener("mouseleave", () => stopSparkleStream(link));
       });
 
+      const VIDEO_QUALITY_KEY = "vajasklicsu-video-quality";
+
+      function getDefaultVideoQuality() {
+        const saved = localStorage.getItem(VIDEO_QUALITY_KEY);
+        if (saved === "low" || saved === "medium" || saved === "high") {
+          return saved;
+        }
+
+        const connection =
+          navigator.connection ||
+          navigator.mozConnection ||
+          navigator.webkitConnection;
+
+        if (connection?.saveData) {
+          return "low";
+        }
+
+        if (window.matchMedia("(max-width: 768px)").matches) {
+          return "low";
+        }
+
+        if (
+          connection?.effectiveType &&
+          ["slow-2g", "2g", "3g"].includes(connection.effectiveType)
+        ) {
+          return "low";
+        }
+
+        return "medium";
+      }
+
+      function getVideoQuality() {
+        return localStorage.getItem(VIDEO_QUALITY_KEY) || getDefaultVideoQuality();
+      }
+
+      function getVideoSource(video, quality) {
+        const qualityKey = quality.charAt(0).toUpperCase() + quality.slice(1);
+        return (
+          video.dataset[`src${qualityKey}`] ||
+          video.dataset.srcMedium ||
+          video.dataset.srcLow ||
+          ""
+        );
+      }
+
+      function syncVideoQualityButtons(quality) {
+        document.querySelectorAll(".video-quality__btn").forEach((button) => {
+          button.classList.toggle("is-active", button.dataset.quality === quality);
+        });
+      }
+
+      function hardenMediaElement(element) {
+        if (!element || element.dataset.hardened === "true") {
+          return;
+        }
+
+        element.dataset.hardened = "true";
+        element.draggable = false;
+        element.setAttribute("draggable", "false");
+        element.classList.add("protected-media");
+
+        if (element.tagName === "VIDEO") {
+          element.setAttribute("controlsList", "nodownload noremoteplayback");
+          element.disablePictureInPicture = true;
+          element.setAttribute("disablepictureinpicture", "");
+        }
+      }
+
+      function initMediaProtection() {
+        document
+          .querySelectorAll(
+            ".overlay-content img, .overlay-content video, .media-lightbox img, .media-lightbox video"
+          )
+          .forEach(hardenMediaElement);
+
+        document.addEventListener(
+          "contextmenu",
+          (event) => {
+            if (
+              event.target.closest(
+                ".protected-media, .lightbox-media, .lightbox-stage, .object-project-inline-video, .media-lightbox"
+              )
+            ) {
+              event.preventDefault();
+            }
+          },
+          { capture: true }
+        );
+
+        document.addEventListener("dragstart", (event) => {
+          if (event.target.closest("img, video")) {
+            event.preventDefault();
+          }
+        });
+
+        ["copy", "cut"].forEach((eventName) => {
+          document.addEventListener(eventName, (event) => {
+            if (event.target.closest(".overlay-content, .media-lightbox")) {
+              event.preventDefault();
+            }
+          });
+        });
+      }
+
+      function initVideoQualityControls() {
+        const quality = getVideoQuality();
+        syncVideoQualityButtons(quality);
+
+        document.querySelectorAll(".video-quality__btn").forEach((button) => {
+          if (button.dataset.bound === "true") {
+            return;
+          }
+
+          button.dataset.bound = "true";
+
+          button.addEventListener("click", () => {
+            const nextQuality = button.dataset.quality;
+            if (!nextQuality) return;
+
+            localStorage.setItem(VIDEO_QUALITY_KEY, nextQuality);
+            syncVideoQualityButtons(nextQuality);
+
+            document
+              .querySelectorAll("video.object-project-inline-video")
+              .forEach((video) => {
+                const wasPlaying = !video.paused;
+                const currentTime = video.currentTime || 0;
+
+                delete video.dataset.loaded;
+                video.pause();
+                video.removeAttribute("src");
+                video.load();
+
+                if (wasPlaying) {
+                  video.src = getVideoSource(video, nextQuality);
+                  video.dataset.loaded = "true";
+                  video.currentTime = Math.min(currentTime, video.duration || currentTime);
+                  video.load();
+                  video.muted = false;
+                  video.controls = true;
+                  video.play().catch(() => {});
+                }
+              });
+          });
+        });
+      }
+
       function initClickToPlayInlineVideos() {
         const videos = document.querySelectorAll(
-          "video.object-project-inline-video[data-src]"
+          "video.object-project-inline-video[data-src-low]"
         );
 
         if (!videos.length) return;
@@ -1908,7 +2092,7 @@
         const ensureLoaded = (video) => {
           if (video.dataset.loaded) return;
 
-          video.src = video.dataset.src;
+          video.src = getVideoSource(video, getVideoQuality());
           video.dataset.loaded = "true";
           video.load();
         };
@@ -1918,10 +2102,13 @@
           pauseOthers(video);
           video.muted = false;
           video.controls = true;
+          video.setAttribute("controlsList", "nodownload noremoteplayback");
           video.play().catch(() => {});
         };
 
         videos.forEach((video) => {
+          hardenMediaElement(video);
+
           if (video.dataset.clickBound === "true") return;
 
           video.dataset.clickBound = "true";
@@ -1943,6 +2130,8 @@
             }
           });
         });
+
+        initVideoQualityControls();
       }
 
       window.addEventListener("hashchange", showSectionFromHash);
@@ -1957,6 +2146,7 @@
         { passive: true }
       );
       showSectionFromHash();
+      initMediaProtection();
       initClickToPlayInlineVideos();
     </script>
   </body>

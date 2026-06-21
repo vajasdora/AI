@@ -1070,6 +1070,53 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
   cursor: zoom-in;
 }
 
+.protected-media,
+.lightbox-stage img,
+.lightbox-stage video,
+.lightbox-thumb img,
+.lightbox-preview img,
+.overlay-content img,
+.overlay-content video {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+}
+
+.object-project-video-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.video-quality {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.video-quality__btn {
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  background: rgba(18, 20, 24, 0.42);
+  color: #f1f3f5;
+  padding: 4px 8px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.video-quality__btn.is-active {
+  background: rgba(245, 246, 244, 0.92);
+  color: #121418;
+}
+
+.video-quality__btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
 .lightbox-media:focus-visible {
   outline: 2px solid #ffffff;
   outline-offset: 6px;

@@ -1012,6 +1012,7 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
 }
 
 .object-project-grid img,
+.object-project-grid video,
 .object-project-video {
   display: block;
   width: 100%;
@@ -1019,6 +1020,10 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
   object-fit: contain;
   background: transparent;
   box-shadow: none;
+}
+
+.object-project-inline-video {
+  cursor: default;
 }
 
 .object-project-video {
@@ -2516,6 +2521,7 @@ body::before {
 .experimental-variation-image,
 .soft-residue-grid img,
 .object-project-grid img,
+.object-project-grid video,
 .object-project-video,
 .three-d-hero,
 .object-project-hero {
@@ -2526,7 +2532,8 @@ body::before {
 
 .experimental-variation-image,
 .soft-residue-grid img,
-.object-project-grid img {
+.object-project-grid img,
+.object-project-grid video {
   filter: saturate(0.84) contrast(1.02);
 }
 
@@ -3332,7 +3339,8 @@ body::after {
 
 .experimental-variation-image,
 .soft-residue-grid img,
-.object-project-grid img {
+.object-project-grid img,
+.object-project-grid video {
   box-shadow: 0 14px 42px rgba(80, 82, 72, 0.1);
   filter: saturate(0.72) contrast(0.95);
 }

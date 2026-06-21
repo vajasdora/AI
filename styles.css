@@ -95,6 +95,77 @@ body::before {
   transform: translateY(1px) scale(0.98);
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(20, 23, 27, 0.36);
+  backdrop-filter: blur(12px);
+}
+
+.lang-switch__btn {
+  border: 0;
+  background: transparent;
+  color: rgba(240, 242, 245, 0.72);
+  font-family: "Serif Pixel 7", "Cormorant Garamond", serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  padding: 7px 11px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lang-switch__btn:hover,
+.lang-switch__btn:focus-visible {
+  color: #ffffff;
+  outline: none;
+}
+
+.lang-switch__btn.is-active {
+  background: rgba(245, 246, 244, 0.94);
+  color: #121418;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.28);
+}
+
+body.site-lang-hu [lang="en"] {
+  display: none !important;
+}
+
+body.site-lang-en [lang="hu"] {
+  display: none !important;
+}
+
+body.site-lang-hu .experimental-copy,
+body.site-lang-en .experimental-copy,
+body.site-lang-hu .experimental-variation-text,
+body.site-lang-en .experimental-variation-text,
+body.site-lang-hu .soft-residue-copy,
+body.site-lang-en .soft-residue-copy,
+body.site-lang-hu .object-project-copy,
+body.site-lang-en .object-project-copy {
+  grid-template-columns: 1fr;
+}
+
+body.site-lang-hu .soft-residue-copy > [lang="hu"] > *,
+body.site-lang-en .soft-residue-copy > [lang="en"] > *,
+body.site-lang-hu .object-project-copy > [lang="hu"] > *,
+body.site-lang-en .object-project-copy > [lang="en"] > * {
+  grid-column: 1 / -1;
+}
+
+body.site-lang-hu .experimental-variation-text h3[lang="hu"],
+body.site-lang-hu .experimental-variation-text p[lang="hu"],
+body.site-lang-en .experimental-variation-text h3[lang="en"],
+body.site-lang-en .experimental-variation-text p[lang="en"] {
+  grid-column: 1;
+}
+
 .menu-sparkle {
   position: absolute;
   width: 3px;
@@ -1351,6 +1422,16 @@ body.lightbox-open .overlay-content {
     font-size: 13px;
     text-align: center;
     box-sizing: border-box;
+  }
+
+  .lang-switch {
+    flex: 0 0 auto;
+    margin-left: 4px;
+  }
+
+  .lang-switch__btn {
+    padding: 8px 10px;
+    font-size: 10px;
   }
 
   .works-section,

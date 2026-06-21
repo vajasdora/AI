@@ -1074,11 +1074,12 @@
                 class="object-project-inline-video"
                 poster="assets/haztartasi-transzcendencia/display/ht-01.jpg"
                 data-src="assets/haztartasi-transzcendencia/video/ht-01.mp4"
-                muted
                 loop
                 playsinline
                 preload="none"
                 aria-label="Háztartási transzcendencia HT 01 video"
+                role="button"
+                tabindex="0"
               ></video>
               <img
                 class="lightbox-media"
@@ -1098,11 +1099,12 @@
                 class="object-project-inline-video"
                 poster="assets/haztartasi-transzcendencia/display/ht-03.jpg"
                 data-src="assets/haztartasi-transzcendencia/video/ht-03.mp4"
-                muted
                 loop
                 playsinline
                 preload="none"
                 aria-label="Háztartási transzcendencia HT 03 video"
+                role="button"
+                tabindex="0"
               ></video>
             </div>
           </article>
@@ -1625,7 +1627,7 @@
         }
 
         window.requestAnimationFrame(() => {
-          initLazyInlineVideos();
+          initClickToPlayInlineVideos();
         });
       }
 
@@ -1888,49 +1890,58 @@
         link.addEventListener("mouseleave", () => stopSparkleStream(link));
       });
 
-      function initLazyInlineVideos() {
+      function initClickToPlayInlineVideos() {
         const videos = document.querySelectorAll(
           "video.object-project-inline-video[data-src]"
         );
 
         if (!videos.length) return;
 
-        const loadAndPlay = (video) => {
-          if (!video.dataset.loaded) {
-            video.src = video.dataset.src;
-            video.dataset.loaded = "true";
-            video.load();
-          }
+        const pauseOthers = (current) => {
+          videos.forEach((video) => {
+            if (video !== current) {
+              video.pause();
+            }
+          });
+        };
 
+        const ensureLoaded = (video) => {
+          if (video.dataset.loaded) return;
+
+          video.src = video.dataset.src;
+          video.dataset.loaded = "true";
+          video.load();
+        };
+
+        const startWithSound = (video) => {
+          ensureLoaded(video);
+          pauseOthers(video);
+          video.muted = false;
+          video.controls = true;
           video.play().catch(() => {});
         };
 
-        if (!("IntersectionObserver" in window)) {
-          videos.forEach(loadAndPlay);
-          return;
-        }
-
-        if (window.inlineVideoObserver) {
-          window.inlineVideoObserver.disconnect();
-        }
-
-        window.inlineVideoObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              const video = entry.target;
-
-              if (entry.isIntersecting) {
-                loadAndPlay(video);
-              } else {
-                video.pause();
-              }
-            });
-          },
-          { threshold: 0.35, rootMargin: "120px 0px" }
-        );
-
         videos.forEach((video) => {
-          window.inlineVideoObserver.observe(video);
+          if (video.dataset.clickBound === "true") return;
+
+          video.dataset.clickBound = "true";
+          video.controls = false;
+
+          video.addEventListener("click", () => {
+            if (video.paused) {
+              startWithSound(video);
+            }
+          });
+
+          video.addEventListener("keydown", (event) => {
+            if (event.key !== "Enter" && event.key !== " ") return;
+
+            event.preventDefault();
+
+            if (video.paused) {
+              startWithSound(video);
+            }
+          });
         });
       }
 
@@ -1946,7 +1957,7 @@
         { passive: true }
       );
       showSectionFromHash();
-      initLazyInlineVideos();
+      initClickToPlayInlineVideos();
     </script>
   </body>
 </html>

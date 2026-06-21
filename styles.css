@@ -1023,7 +1023,7 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
 }
 
 .object-project-inline-video {
-  cursor: default;
+  cursor: pointer;
 }
 
 .object-project-video {

@@ -82,13 +82,15 @@ function Optimize-Video {
     -hide_banner `
     -loglevel error `
     -y `
+    -ss 5 `
     -i $SourcePath `
-    -an `
     -c:v libx264 `
     -preset slow `
-    -crf 22 `
+    -crf 26 `
     -pix_fmt yuv420p `
-    -vf "scale='min(1920,iw)':-2" `
+    -vf "scale='min(1280,iw)':-2" `
+    -c:a aac `
+    -b:a 128k `
     -movflags +faststart `
     $DestPath
 

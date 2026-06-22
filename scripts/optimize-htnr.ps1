@@ -64,7 +64,7 @@ foreach ($dir in @($displayDir, $fullDir)) {
 }
 
 $sources = @(
-  @{ Match = "vajas-htnr-00.jpg"; Base = "vajas-htnr-00" },
+  @{ Match = "VAJAS_HTNR_00_b.jpg"; Base = "vajas-htnr-00" },
   @{ Match = "vajas-htnr-01.jpg"; Base = "vajas-htnr-01" },
   @{ Match = "vajas-htnr-02.jpg"; Base = "vajas-htnr-02" },
   @{ Match = "vajas-htnr-03.jpg"; Base = "vajas-htnr-03" },
@@ -72,9 +72,15 @@ $sources = @(
 )
 
 foreach ($entry in $sources) {
-  $sourceFile = Get-ChildItem $outRoot -File -ErrorAction SilentlyContinue |
+  $sourceFile = Get-ChildItem (Join-Path $root "assets") -Recurse -File |
     Where-Object { $_.Name -eq $entry.Match } |
     Select-Object -First 1
+
+  if (-not $sourceFile) {
+    $sourceFile = Get-ChildItem $outRoot -File -ErrorAction SilentlyContinue |
+      Where-Object { $_.Name -eq "$($entry.Base).jpg" } |
+      Select-Object -First 1
+  }
 
   if (-not $sourceFile) {
     $sourceFile = Get-ChildItem (Join-Path $root "assets") -Recurse -File |

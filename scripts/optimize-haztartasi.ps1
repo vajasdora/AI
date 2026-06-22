@@ -123,7 +123,7 @@ $imageMap = @(
   @{ Source = "DT_02.png"; Base = "dt-02" },
   @{ Source = "DT_03.jpg"; Base = "dt-03" },
   @{ Source = "HT_01.png"; Base = "ht-01" },
-  @{ Source = "HT_02.png"; Base = "ht-02" },
+  @{ Source = "HT_02_b.png"; Base = "ht-02" },
   @{ Source = "HT_03.png"; Base = "ht-03" }
 )
 

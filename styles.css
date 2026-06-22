@@ -276,8 +276,8 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
   display: block;
   width: 100%;
   min-width: 0;
-  aspect-ratio: 2 / 3;
-  min-height: 420px;
+  aspect-ratio: 3 / 4;
+  min-height: 0;
   overflow: hidden;
   color: #ffffff;
   text-decoration: none;
@@ -490,33 +490,24 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
 
   .work-categories,
   .about-projects {
-    width: calc(100vw - 68px);
-    margin-left: calc(50% - 50vw + 34px);
-    grid-template-columns: repeat(3, var(--works-card-width, 357px));
-    gap: 0;
-    justify-content: space-between;
+    width: 100%;
+    margin-left: 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    justify-content: initial;
   }
 
   .work-category,
   .about-project-card {
     min-height: 0;
     height: auto;
+    margin-top: 0 !important;
+    aspect-ratio: 3 / 4;
   }
 
-  .about-project-card:nth-child(3n + 2) {
-    margin-top: 58px;
-  }
-
-  .about-project-card:nth-child(3n) {
-    margin-top: 24px;
-  }
-
-  .work-category:nth-child(2) {
-    margin-top: 58px;
-  }
-
-  .work-category:nth-child(3) {
-    margin-top: 24px;
+  .about-project-card:nth-child(n),
+  .work-category:nth-child(n) {
+    margin-top: 0 !important;
   }
 }
 
@@ -2215,13 +2206,10 @@ body::before {
 }
 
 .about-project-card:nth-child(2),
-.about-project-card:nth-child(6) {
-  margin-top: 56px;
-}
-
+.about-project-card:nth-child(6),
 .about-project-card:nth-child(4),
 .about-project-card:nth-child(8) {
-  margin-top: 112px;
+  margin-top: 0;
 }
 
 .about-project-card img,
@@ -3183,7 +3171,7 @@ body::after {
 }
 
 .about-project-card {
-  aspect-ratio: 4 / 5.3;
+  aspect-ratio: 3 / 4;
 }
 
 .work-category {
@@ -3607,8 +3595,8 @@ body::after {
 
   .about-projects {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
     width: 100%;
     margin-left: 0;
     align-items: stretch;
@@ -3619,18 +3607,14 @@ body::after {
     min-width: 0;
     min-height: 0;
     margin-top: 0 !important;
-    aspect-ratio: 4 / 5;
-  }
-
-  .about-project-card .work-label {
-    font-size: 14px;
+    aspect-ratio: 3 / 4;
   }
 
   .about-projects .about-project-card .work-label {
-    width: min(84%, 220px);
-    min-height: 64px;
-    padding: 10px 12px;
-    font-size: 13px;
+    width: min(84%, 200px);
+    min-height: 58px;
+    padding: 10px 10px;
+    font-size: 12px;
   }
 
   .about-projects .about-project-card .work-frame {
@@ -3649,7 +3633,7 @@ body::after {
   .about-projects {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+    gap: 20px;
     width: 100%;
     margin-left: 0;
     align-items: stretch;
@@ -3661,29 +3645,7 @@ body::after {
     min-width: 0;
     min-height: 0;
     margin-top: 0 !important;
-    aspect-ratio: 4 / 5;
-  }
-}
-
-@media (min-width: 1500px) {
-  .about-projects {
-    grid-template-columns: 0.95fr 1.18fr 0.9fr 1.08fr;
-    gap: 16px;
-  }
-
-  .about-project-card:nth-child(2),
-  .about-project-card:nth-child(6) {
-    margin-top: 78px;
-  }
-
-  .about-project-card:nth-child(3),
-  .about-project-card:nth-child(7) {
-    margin-top: 28px;
-  }
-
-  .about-project-card:nth-child(4),
-  .about-project-card:nth-child(8) {
-    margin-top: 132px;
+    aspect-ratio: 3 / 4;
   }
 }
 

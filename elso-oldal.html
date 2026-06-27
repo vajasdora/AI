@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=body-1" />
+    <link rel="stylesheet" href="styles.css?v=body-2" />
   </head>
   <body class="site-lang-hu">
     <main class="overlay-content">
@@ -2035,9 +2035,32 @@
           }
         });
 
+        function selectionIncludesProtectedMedia() {
+          const selection = window.getSelection();
+          if (!selection || selection.isCollapsed) {
+            return false;
+          }
+
+          const nodes = [selection.anchorNode, selection.focusNode];
+          return nodes.some((node) => {
+            if (!node) return false;
+            const element =
+              node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
+            return (
+              element &&
+              element.closest(
+                "img, video, .lightbox-stage, .lightbox-preview, .lightbox-thumb"
+              )
+            );
+          });
+        }
+
         ["copy", "cut"].forEach((eventName) => {
           document.addEventListener(eventName, (event) => {
-            if (event.target.closest(".overlay-content, .media-lightbox")) {
+            if (
+              event.target.closest("img, video, .lightbox-stage, .media-lightbox") ||
+              selectionIncludesProtectedMedia()
+            ) {
               event.preventDefault();
             }
           });

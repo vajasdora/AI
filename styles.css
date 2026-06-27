@@ -65,7 +65,11 @@
 .object-project-copy,
 .object-copy,
 .cv-section,
-.contact-section {
+.contact-section,
+.soft-residue-meta,
+.object-project-copy .object-meta,
+.object-copy .object-meta,
+.soft-residue-grid figcaption {
   font-family: var(--font-body);
   font-weight: 100;
   font-size: var(--body-size);
@@ -73,6 +77,8 @@
   letter-spacing: var(--body-letter-spacing);
   text-align: left;
   text-align-last: auto;
+  -webkit-user-select: text;
+  user-select: text;
 }
 
 .soft-residue-meta,

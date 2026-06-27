@@ -37,6 +37,7 @@
   --font-display: "TT Tricks Stencil Trial Regular", "Serif Pixel 7", serif;
   --font-nav: "Serif Pixel 7", "Cormorant Garamond", serif;
   --font-body: "SuisseIntlCond-Thin", "Helvetica Neue", Arial, sans-serif;
+  --font-impact: Impact, Haettenschweiler, "Arial Narrow Bold", "Arial Black", sans-serif;
   --body-size: clamp(26px, 3.8vw, 48px);
   --body-line-height: 0.86;
   --body-letter-spacing: -0.045em;
@@ -888,9 +889,12 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
   position: relative;
   z-index: 2;
   margin: 0 0 clamp(-40px, -5.5vw, -72px);
+  color: #000;
+  font-family: var(--font-impact);
   font-size: clamp(56px, 10vw, 136px);
+  font-weight: 400;
   line-height: 0.82;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 #soft-residue .soft-residue-hero .three-d-hero {
@@ -907,14 +911,16 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
   position: relative;
   z-index: 2;
   width: fit-content;
-  max-width: min(46%, 360px);
-  margin: clamp(-32px, -4.5vw, -56px) 0 0 auto;
-  font-family: var(--font-body);
-  font-size: clamp(11px, 1.1vw, 14px);
-  font-weight: 100;
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+  max-width: min(52%, 420px);
+  margin: clamp(-28px, -3.8vw, -48px) 0 0 auto;
+  color: #000;
+  font-family: var(--font-impact);
+  font-size: clamp(17px, 2.4vw, 32px);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
   text-align: right;
+  text-transform: none;
 }
 
 .soft-residue-copy {
@@ -1698,9 +1704,9 @@ body.lightbox-open .overlay-content {
   }
 
   #soft-residue .soft-residue-hero .soft-residue-meta {
-    max-width: 52%;
-    font-size: clamp(10px, 2.8vw, 12px);
-    margin-top: clamp(-24px, -6vw, -36px);
+    max-width: 58%;
+    font-size: clamp(14px, 3.6vw, 22px);
+    margin-top: clamp(-20px, -5vw, -32px);
   }
 
   #soft-residue .soft-residue-hero .three-d-hero {

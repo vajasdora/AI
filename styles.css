@@ -1581,7 +1581,7 @@ body.lightbox-open .overlay-content {
     justify-content: space-between;
     padding: 7px;
     border: 1px solid rgba(0, 0, 0, 0.12);
-    background: #d3d3d3;
+    background: #ebebeb;
     backdrop-filter: none;
     box-sizing: border-box;
   }
@@ -2010,12 +2010,12 @@ body.lightbox-open .overlay-content {
   --sheet-top: 54px;
   --sheet-width: min(1420px, calc(100vw - 96px));
   --sheet-pad: clamp(34px, 4vw, 64px);
-  --paper: #d3d3d3;
-  --paper-soft: #d3d3d3;
+  --paper: #ebebeb;
+  --paper-soft: #ebebeb;
   --ink: #0b0b0b;
   --muted: #666967;
   --line: #d4d4ce;
-  --black: #d3d3d3;
+  --black: #ebebeb;
 }
 
 * {
@@ -3087,18 +3087,18 @@ body::before {
 :root {
   --sheet-top: 28px;
   --sheet-width: min(1340px, calc(100vw - 56px));
-  --paper: #d3d3d3;
-  --paper-solid: #d3d3d3;
-  --paper-soft: #d3d3d3;
+  --paper: #ebebeb;
+  --paper-solid: #ebebeb;
+  --paper-soft: #ebebeb;
   --ink: #000;
   --muted: #666967;
   --line: rgba(73, 78, 72, 0.16);
-  --mist: #d3d3d3;
-  --black: #d3d3d3;
+  --mist: #ebebeb;
+  --black: #ebebeb;
 }
 
 body {
-  background: #d3d3d3;
+  background: #ebebeb;
   background-image: none;
   color: var(--ink);
 }
@@ -3116,7 +3116,7 @@ body::after {
   margin: var(--sheet-top) auto;
   padding: 96px var(--sheet-pad) 78px;
   overflow: visible;
-  background: #d3d3d3;
+  background: #ebebeb;
   border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow:
     0 22px 80px rgba(65, 66, 58, 0.13),
@@ -3549,7 +3549,7 @@ body::after {
 
 @media (max-width: 860px) {
   body {
-    background: #d3d3d3;
+    background: #ebebeb;
     background-image: none;
   }
 
@@ -3562,7 +3562,7 @@ body::after {
   }
 
   .overlay-content {
-    background: #d3d3d3;
+    background: #ebebeb;
     backdrop-filter: none;
   }
 

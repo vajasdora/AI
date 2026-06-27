@@ -3733,3 +3733,65 @@ body::after {
   margin-left: 0;
   transform: none;
 }
+
+/* Works sections: all text black */
+.works-section,
+.experimental-section,
+.three-d-section,
+.objects-section {
+  color: #000;
+}
+
+.works-section .category-work-link,
+.works-section .category-work-link::before,
+.works-section .category-work-title,
+.works-section .three-d-title,
+.works-section .experimental-title,
+.works-section .object-title,
+.experimental-section .experimental-title,
+.experimental-section .experimental-copy,
+.experimental-section .experimental-copy h3,
+.experimental-section .experimental-copy p,
+.experimental-section .experimental-variation-text,
+.experimental-section .experimental-variation-text h3,
+.experimental-section .experimental-variation-text p,
+.three-d-section .three-d-title,
+.three-d-section .three-d-title a,
+.three-d-section .category-work-link,
+.three-d-section .category-work-link::before,
+.three-d-section .category-work-title,
+.three-d-section .soft-residue-copy,
+.three-d-section .soft-residue-copy p,
+.three-d-section .soft-residue-grid figcaption,
+.three-d-section .soft-residue-meta,
+.three-d-section .soft-residue-title,
+.objects-section .object-title,
+.objects-section .object-title a,
+.objects-section .category-work-link,
+.objects-section .category-work-link::before,
+.objects-section .category-work-title,
+.objects-section .object-project-copy,
+.objects-section .object-project-copy p,
+.objects-section .object-project-copy .object-meta,
+.objects-section .object-copy,
+.objects-section .object-copy p,
+.objects-section .object-copy .object-meta {
+  color: #000;
+}
+
+.works-section .category-work-link:hover,
+.works-section .category-work-link:focus-visible,
+.experimental-section .category-work-link:hover,
+.experimental-section .category-work-link:focus-visible,
+.three-d-section .three-d-title a:hover,
+.three-d-section .three-d-title a:focus-visible,
+.three-d-section .category-work-link:hover,
+.three-d-section .category-work-link:focus-visible,
+.objects-section .object-title a:hover,
+.objects-section .object-title a:focus-visible,
+.objects-section .category-work-link:hover,
+.objects-section .category-work-link:focus-visible {
+  color: #000;
+  text-shadow: none;
+  filter: none;
+}

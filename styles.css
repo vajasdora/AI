@@ -878,6 +878,49 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
   object-position: left center;
 }
 
+#soft-residue .soft-residue-hero {
+  position: relative;
+  width: min(1120px, 100%);
+  margin-bottom: 28px;
+}
+
+#soft-residue .soft-residue-title {
+  position: absolute;
+  z-index: 2;
+  top: clamp(6px, 1.2vw, 18px);
+  left: 0;
+  margin: 0;
+  font-size: clamp(56px, 10vw, 136px);
+  line-height: 0.82;
+  letter-spacing: -0.03em;
+}
+
+#soft-residue .soft-residue-hero .soft-residue-meta {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  max-width: min(52%, 520px);
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3.4vw, 46px);
+  font-weight: 400;
+  line-height: 0.86;
+  letter-spacing: -0.03em;
+  text-align: right;
+  transform: translateY(28%);
+}
+
+#soft-residue .soft-residue-hero .three-d-hero {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-height: none;
+  object-fit: cover;
+  object-position: center center;
+}
+
 .soft-residue-copy {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -949,6 +992,10 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
 
 .soft-residue-meta {
   margin-top: 18px;
+}
+
+#soft-residue .soft-residue-copy .soft-residue-meta {
+  display: none;
 }
 
 .soft-residue-grid {
@@ -1646,6 +1693,21 @@ body.lightbox-open .overlay-content {
     width: 100%;
     max-height: 58vh;
     object-position: center center;
+  }
+
+  #soft-residue .soft-residue-title {
+    font-size: clamp(40px, 12vw, 80px);
+    line-height: 0.84;
+  }
+
+  #soft-residue .soft-residue-hero .soft-residue-meta {
+    max-width: 58%;
+    font-size: clamp(18px, 4.8vw, 30px);
+    transform: translateY(24%);
+  }
+
+  #soft-residue .soft-residue-hero .three-d-hero {
+    max-height: none;
   }
 
   .object-work-layout {

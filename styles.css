@@ -1579,14 +1579,12 @@ body.lightbox-open .overlay-content {
   }
 
   body::before {
-    display: none;
-    content: none;
+    display: block;
   }
 
   .overlay-content {
     padding-top: 126px;
     padding-bottom: 54px;
-    background: var(--site-bg);
   }
 
   .name {

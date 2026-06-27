@@ -912,6 +912,9 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
 }
 
 #soft-residue .soft-residue-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   width: 100%;
   max-width: none;
   margin: 0 0 32px;

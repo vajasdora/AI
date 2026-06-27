@@ -39,6 +39,18 @@
   --font-body: "SuisseIntlCond-Thin", "Helvetica Neue", Arial, sans-serif;
 }
 
+.experimental-title,
+.three-d-title,
+.object-title,
+.contact-section h2,
+.work-label,
+.project-index .category-work-title,
+.experimental-copy h3,
+.experimental-variation-text h3,
+.page-title {
+  text-transform: uppercase;
+}
+
 .about-copy,
 .about-intro,
 .experimental-copy,
@@ -3350,7 +3362,7 @@ body::after {
   font-size: 22px;
   font-weight: 400;
   line-height: 0.98;
-  text-transform: none;
+  text-transform: uppercase;
   text-shadow: 0 0 18px rgba(255, 255, 255, 0.28);
 }
 

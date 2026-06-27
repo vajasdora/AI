@@ -183,15 +183,21 @@ body::before {
 
 .top-nav a:hover,
 .top-nav a:focus-visible {
-  color: #000;
-  text-shadow: none;
-  filter: none;
+  color: #ffffff;
+  text-shadow:
+    0 0 2px rgba(0, 0, 0, 0.35),
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 0 16px rgba(196, 216, 255, 0.75);
+  filter: brightness(1.12);
 }
 
 .top-nav a.active {
-  color: #000;
-  text-shadow: none;
-  filter: none;
+  color: #ffffff;
+  text-shadow:
+    0 0 2px rgba(0, 0, 0, 0.35),
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 0 16px rgba(196, 216, 255, 0.75);
+  filter: brightness(1.12);
   opacity: 1;
 }
 
@@ -328,13 +334,18 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
   display: inline-block;
   color: inherit;
   text-decoration: none;
+  transition: color 0.2s ease, text-shadow 0.2s ease, filter 0.2s ease;
 }
 
 .name a:hover,
 .name a:focus-visible,
 .name.is-active a {
-  color: #000;
-  text-shadow: none;
+  color: #ffffff;
+  text-shadow:
+    0 0 2px rgba(0, 0, 0, 0.35),
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 0 16px rgba(196, 216, 255, 0.75);
+  filter: brightness(1.12);
   outline: none;
 }
 
@@ -2149,10 +2160,13 @@ body::before {
 .top-nav a:hover,
 .top-nav a:focus-visible,
 .top-nav a.active {
-  color: var(--paper);
-  background: var(--ink);
-  text-shadow: none;
-  filter: none;
+  color: #ffffff;
+  background: transparent;
+  text-shadow:
+    0 0 2px rgba(0, 0, 0, 0.35),
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 0 16px rgba(196, 216, 255, 0.75);
+  filter: brightness(1.12);
   outline: none;
 }
 
@@ -3161,9 +3175,13 @@ body::after {
 .top-nav a:hover,
 .top-nav a:focus-visible,
 .top-nav a.active {
-  color: #000;
+  color: #ffffff;
   background: transparent;
-  text-shadow: none;
+  text-shadow:
+    0 0 2px rgba(0, 0, 0, 0.35),
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 0 16px rgba(196, 216, 255, 0.75);
+  filter: brightness(1.12);
 }
 
 .page-intro {

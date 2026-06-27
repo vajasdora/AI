@@ -38,7 +38,7 @@
   --font-nav: "Serif Pixel 7", "Cormorant Garamond", serif;
   --font-body: "SuisseIntlCond-Thin", "Helvetica Neue", Arial, sans-serif;
   --font-impact: Impact, Haettenschweiler, "Arial Narrow Bold", "Arial Black", sans-serif;
-  --site-bg: #fcfcfc;
+  --site-bg: #ffffff;
   --sheet-top: 28px;
   --sheet-width: min(1340px, calc(100vw - 56px));
   --sheet-pad: clamp(34px, 4vw, 64px);
@@ -3805,4 +3805,18 @@ body::after {
   color: #000;
   text-shadow: none;
   filter: none;
+}
+
+html,
+body,
+.overlay-content {
+  background-color: var(--site-bg) !important;
+  background-image: none !important;
+}
+
+body::before,
+body::after,
+.overlay-content::before {
+  display: none !important;
+  content: none !important;
 }

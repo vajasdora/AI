@@ -38,6 +38,13 @@
   --font-nav: "Serif Pixel 7", "Cormorant Garamond", serif;
   --font-body: "SuisseIntlCond-Thin", "Helvetica Neue", Arial, sans-serif;
   --font-impact: Impact, Haettenschweiler, "Arial Narrow Bold", "Arial Black", sans-serif;
+  --site-bg: #fcfcfc;
+  --sheet-top: 28px;
+  --sheet-width: min(1340px, calc(100vw - 56px));
+  --sheet-pad: clamp(34px, 4vw, 64px);
+  --ink: #000;
+  --paper: var(--site-bg);
+  --paper-soft: var(--site-bg);
   --body-size: clamp(26px, 3.8vw, 48px);
   --body-line-height: 0.86;
   --body-letter-spacing: -0.045em;
@@ -111,40 +118,41 @@ b {
   font-weight: 600;
 }
 
+html {
+  background: var(--site-bg);
+}
+
 body {
   margin: 0;
   min-height: 100vh;
   box-sizing: border-box;
-  background-color: #2f3135;
-  background-image: url("assets/03%20m%C3%A1solat.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-image: url("assets/03%20m%C3%A1solat.png");
+  background: var(--site-bg);
+  background-image: none;
   font-family: var(--font-body);
   font-weight: 100;
   font-size: 22px;
   line-height: 1.6;
-  color: #eceff3;
+  color: var(--ink);
   overflow-y: auto;
 }
 
 body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(36, 39, 44, 0.34);
-  backdrop-filter: blur(5px);
-  z-index: 0;
-  pointer-events: none;
+  display: none;
+  content: none;
 }
 
 .overlay-content {
   position: relative;
   z-index: 1;
-  min-height: 100vh;
-  padding-top: 110px;
+  width: var(--sheet-width);
+  min-height: calc(100vh - (var(--sheet-top) * 2));
+  margin: var(--sheet-top) auto;
+  padding: 96px var(--sheet-pad) 78px;
+  overflow: visible;
+  background: var(--site-bg);
+  color: var(--ink);
+  border: 0;
+  box-shadow: none;
 }
 
 .top-nav {
@@ -1557,19 +1565,22 @@ body.lightbox-open .overlay-content {
 
 @media (max-width: 860px) {
   body {
+    background: var(--site-bg);
+    background-image: none;
     background-attachment: scroll;
     background-position: center top;
     overflow-x: hidden;
   }
 
   body::before {
-    background: rgba(28, 31, 35, 0.46);
-    backdrop-filter: blur(4px);
+    display: none;
+    content: none;
   }
 
   .overlay-content {
     padding-top: 126px;
     padding-bottom: 54px;
+    background: var(--site-bg);
   }
 
   .name {
@@ -1592,7 +1603,7 @@ body.lightbox-open .overlay-content {
     justify-content: space-between;
     padding: 7px;
     border: 1px solid rgba(0, 0, 0, 0.12);
-    background: #f4f4f4;
+    background: var(--site-bg);
     backdrop-filter: none;
     box-sizing: border-box;
   }
@@ -2021,12 +2032,12 @@ body.lightbox-open .overlay-content {
   --sheet-top: 54px;
   --sheet-width: min(1420px, calc(100vw - 96px));
   --sheet-pad: clamp(34px, 4vw, 64px);
-  --paper: #f4f4f4;
-  --paper-soft: #f4f4f4;
+  --paper: var(--site-bg);
+  --paper-soft: var(--site-bg);
   --ink: #0b0b0b;
   --muted: #666967;
   --line: #d4d4ce;
-  --black: #f4f4f4;
+  --black: var(--site-bg);
 }
 
 * {
@@ -3101,28 +3112,30 @@ body::before {
 :root {
   --sheet-top: 28px;
   --sheet-width: min(1340px, calc(100vw - 56px));
-  --paper: #f4f4f4;
-  --paper-solid: #f4f4f4;
-  --paper-soft: #f4f4f4;
+  --paper: var(--site-bg);
+  --paper-solid: var(--site-bg);
+  --paper-soft: var(--site-bg);
   --ink: #000;
   --muted: #666967;
   --line: rgba(73, 78, 72, 0.16);
-  --mist: #f4f4f4;
-  --black: #f4f4f4;
+  --mist: var(--site-bg);
+  --black: var(--site-bg);
 }
 
 body {
-  background: #f4f4f4;
+  background: var(--site-bg);
   background-image: none;
   color: var(--ink);
 }
 
 body::before {
   display: none;
+  content: none;
 }
 
 body::after {
   display: none;
+  content: none;
 }
 
 .overlay-content {
@@ -3130,11 +3143,9 @@ body::after {
   margin: var(--sheet-top) auto;
   padding: 96px var(--sheet-pad) 78px;
   overflow: visible;
-  background: #f4f4f4;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow:
-    0 22px 80px rgba(65, 66, 58, 0.13),
-    inset 0 0 78px rgba(255, 255, 255, 0.66);
+  background: var(--site-bg);
+  border: 0;
+  box-shadow: none;
   backdrop-filter: none;
 }
 
@@ -3567,7 +3578,7 @@ body::after {
 
 @media (max-width: 860px) {
   body {
-    background: #f4f4f4;
+    background: var(--site-bg);
     background-image: none;
   }
 
@@ -3580,7 +3591,7 @@ body::after {
   }
 
   .overlay-content {
-    background: #f4f4f4;
+    background: var(--site-bg);
     backdrop-filter: none;
   }
 

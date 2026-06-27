@@ -879,6 +879,12 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
   object-position: left center;
 }
 
+#soft-residue {
+  background: #e9ebeb;
+  color: #000;
+  padding: clamp(24px, 3vw, 40px) clamp(16px, 2.2vw, 28px);
+}
+
 #soft-residue .soft-residue-hero {
   position: relative;
   width: min(1120px, 100%);
@@ -924,6 +930,15 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
   letter-spacing: -0.01em;
   text-align: right;
   text-transform: none;
+}
+
+#soft-residue .soft-residue-copy,
+#soft-residue .soft-residue-copy p {
+  color: #000;
+}
+
+#soft-residue .soft-residue-grid figcaption {
+  color: #000;
 }
 
 .soft-residue-copy {

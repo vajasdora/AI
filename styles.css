@@ -39,12 +39,17 @@
   --font-body: "SuisseIntlCond-Thin", "Helvetica Neue", Arial, sans-serif;
   --font-impact: Impact, Haettenschweiler, "Arial Narrow Bold", "Arial Black", sans-serif;
   --site-bg: #f2f2f0;
+  --site-bg-image: url("assets/03%20m%C3%A1solat.png");
+  --site-bg-wash: linear-gradient(
+    rgba(252, 252, 248, 0.28),
+    rgba(255, 255, 255, 0.48)
+  );
   --sheet-top: 28px;
   --sheet-width: min(1340px, calc(100vw - 56px));
   --sheet-pad: clamp(34px, 4vw, 64px);
   --ink: #000;
-  --paper: rgba(255, 255, 255, 0.8);
-  --paper-soft: rgba(255, 255, 255, 0.68);
+  --paper: rgba(255, 255, 255, 0.58);
+  --paper-soft: rgba(255, 255, 255, 0.48);
   --body-size: clamp(26px, 3.8vw, 48px);
   --body-line-height: 0.86;
   --body-letter-spacing: -0.045em;
@@ -137,13 +142,37 @@ body {
 }
 
 body::before {
-  display: none;
-  content: none;
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    var(--site-bg-wash),
+    var(--site-bg-image) center center / cover no-repeat;
+  filter: blur(8px) saturate(0.58) contrast(0.96) brightness(1.12);
+  opacity: 0.88;
+  transform: scale(1.03);
 }
 
 body::after {
-  display: none;
-  content: none;
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 36% 28%, rgba(255, 255, 255, 0.3), transparent 13%),
+    radial-gradient(circle at 62% 46%, rgba(228, 232, 226, 0.16), transparent 18%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(140, 145, 140, 0.04) 0,
+      rgba(140, 145, 140, 0.04) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  mix-blend-mode: multiply;
+  opacity: 0.62;
 }
 
 .overlay-content {
@@ -154,11 +183,33 @@ body::after {
   margin: var(--sheet-top) auto;
   padding: 96px var(--sheet-pad) 78px;
   overflow: visible;
-  background: var(--paper);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.52)),
+    var(--site-bg-image) center center / cover no-repeat fixed,
+    var(--site-bg);
   color: var(--ink);
   border: 1px solid rgba(255, 255, 255, 0.72);
   box-shadow: 0 22px 80px rgba(65, 66, 58, 0.08);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(6px);
+}
+
+.overlay-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(rgba(80, 85, 80, 0.18) 0.45px, transparent 0.45px),
+    linear-gradient(90deg, rgba(80, 85, 80, 0.03) 1px, transparent 1px);
+  background-size: 11px 11px, 25% 100%;
+  opacity: 0.24;
+  mask-image: radial-gradient(ellipse at 50% 40%, #000 0%, #000 46%, transparent 82%);
+}
+
+.overlay-content > * {
+  position: relative;
+  z-index: 1;
 }
 
 .top-nav {
@@ -2885,11 +2936,8 @@ body::before {
   }
 
   body {
-    background: var(--paper);
-  }
-
-  body::before {
-    display: none;
+    background: var(--site-bg);
+    background-image: none;
   }
 
   .overlay-content {
@@ -3132,66 +3180,18 @@ body {
   color: var(--ink);
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  display: block;
-  background:
-    linear-gradient(rgba(252, 252, 250, 0.58), rgba(255, 255, 255, 0.82)),
-    url("assets/03%20m%C3%A1solat.png") center center / cover no-repeat;
-  filter: blur(12px) saturate(0.42) contrast(0.94) brightness(1.2);
-  opacity: 0.5;
-  transform: scale(1.05);
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  display: block;
-  background:
-    radial-gradient(circle at 36% 28%, rgba(255, 255, 255, 0.34), transparent 13%),
-    radial-gradient(circle at 62% 46%, rgba(228, 232, 226, 0.18), transparent 18%),
-    repeating-linear-gradient(
-      0deg,
-      rgba(170, 175, 170, 0.022) 0,
-      rgba(170, 175, 170, 0.022) 1px,
-      transparent 1px,
-      transparent 3px
-    );
-  mix-blend-mode: multiply;
-  opacity: 0.5;
-}
-
 .overlay-content {
   width: var(--sheet-width);
   margin: var(--sheet-top) auto;
   padding: 96px var(--sheet-pad) 78px;
   overflow: visible;
-  background: var(--paper);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.52)),
+    var(--site-bg-image) center center / cover no-repeat fixed,
+    var(--site-bg);
   border: 1px solid rgba(255, 255, 255, 0.72);
   box-shadow: 0 22px 80px rgba(65, 66, 58, 0.08);
-  backdrop-filter: blur(12px);
-}
-
-.overlay-content::before {
-  content: "";
-  position: absolute;
-  inset: 18px;
-  z-index: 0;
-  pointer-events: none;
-  display: block;
-  background-image:
-    radial-gradient(rgba(110, 115, 110, 0.11) 0.45px, transparent 0.45px),
-    linear-gradient(90deg, rgba(110, 115, 110, 0.016) 1px, transparent 1px);
-  background-size: 11px 11px, 25% 100%;
-  opacity: 0.14;
-  mask-image: radial-gradient(ellipse at 50% 35%, #000 0%, #000 34%, transparent 72%);
+  backdrop-filter: blur(6px);
 }
 
 .name,
@@ -3624,19 +3624,20 @@ body::after {
   }
 
   body::before {
-    display: block;
-    opacity: 0.34;
-    filter: blur(14px) saturate(0.38) contrast(0.94) brightness(1.18);
+    opacity: 0.78;
+    filter: blur(10px) saturate(0.52) contrast(0.95) brightness(1.1);
   }
 
   body::after {
-    display: block;
-    opacity: 0.38;
+    opacity: 0.5;
   }
 
   .overlay-content {
-    background: rgba(255, 255, 255, 0.82);
-    backdrop-filter: blur(10px);
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.56)),
+      var(--site-bg-image) center center / cover no-repeat fixed,
+      var(--site-bg);
+    backdrop-filter: blur(5px);
   }
 
   .page-title {

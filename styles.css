@@ -24,8 +24,18 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "TT Tricks Stencil Trial Regular";
+  src: url("assets/fonts/0627/tt_tricks/TT Tricks Stencil Trial Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --font-display: "Serif Pixel 7", "Cormorant Garamond", serif;
+  --font-display: "TT Tricks Stencil Trial Regular", "Serif Pixel 7", serif;
+  --font-nav: "Serif Pixel 7", "Cormorant Garamond", serif;
   --font-body: "SuisseIntlCond-Thin", "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -112,7 +122,7 @@ body::before {
   border-radius: 8px;
   color: #f0f2f5;
   text-decoration: none;
-  font-family: var(--font-display);
+  font-family: var(--font-nav);
   font-size: clamp(14px, 1.7vw, 19px);
   font-weight: 400;
   letter-spacing: 0;
@@ -249,7 +259,7 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
   left: 34px;
   margin: 0;
   color: #f1f3f5;
-  font-family: var(--font-display);
+  font-family: var(--font-nav);
   font-size: 16px;
   letter-spacing: 0;
   font-weight: 400;
@@ -1262,7 +1272,7 @@ body.lightbox-open .overlay-content {
   border: 0;
   color: #ffffff;
   background: transparent;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   line-height: 1;
   cursor: pointer;
 }
@@ -1444,6 +1454,7 @@ body.lightbox-open .overlay-content {
 
 .contact-section h2 {
   margin: 0 0 10px;
+  font-family: var(--font-display);
   font-size: 20px;
 }
 
@@ -2018,9 +2029,9 @@ body::before {
   top: calc(var(--sheet-top) + 22px);
   left: calc((100vw - var(--sheet-width)) / 2 + var(--sheet-pad));
   margin: 0;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-nav);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -2719,6 +2730,7 @@ body::before {
 .contact-section h2 {
   margin: 0 0 52px;
   color: var(--ink);
+  font-family: var(--font-display);
   font-size: 76px;
   font-weight: 400;
   letter-spacing: 0;
@@ -3088,9 +3100,9 @@ body::after {
 }
 
 .name {
-  font-family: "Cormorant Garamond", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-nav);
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 400;
   text-transform: none;
 }
 
@@ -3102,7 +3114,7 @@ body::after {
   min-height: 0;
   padding: 2px 0;
   color: rgba(36, 39, 36, 0.72);
-  font-family: var(--font-display);
+  font-family: var(--font-nav);
   font-size: 10px;
   font-weight: 400;
   border: 0;
@@ -3143,18 +3155,18 @@ body::after {
 
 .page-title {
   color: rgba(34, 37, 34, 0.88);
-  font-family: "Cormorant Garamond", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-display);
   font-size: 92px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 0.91;
   text-shadow: 0 0 26px rgba(120, 128, 116, 0.16);
 }
 
 .page-description {
   color: rgba(45, 49, 45, 0.74);
-  font-family: "Cormorant Garamond", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-body);
   font-size: 19px;
-  font-weight: 500;
+  font-weight: 100;
   line-height: 1.15;
 }
 
@@ -3334,9 +3346,9 @@ body::after {
   bottom: 13px;
   left: 14px;
   color: currentColor;
-  font-family: "Cormorant Garamond", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-display);
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 0.98;
   text-transform: none;
   text-shadow: 0 0 18px rgba(255, 255, 255, 0.28);
@@ -3400,9 +3412,9 @@ body::after {
 
 .project-index .category-work-title {
   color: inherit;
-  font-family: "Cormorant Garamond", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-display);
   font-size: 34px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .category-work-link:hover,
@@ -3416,9 +3428,9 @@ body::after {
 .object-title,
 .contact-section h2 {
   color: rgba(34, 37, 34, 0.88);
-  font-family: "Cormorant Garamond", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-display);
   font-size: 86px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 0.92;
 }
 

@@ -37,6 +37,12 @@
   --font-display: "TT Tricks Stencil Trial Regular", "Serif Pixel 7", serif;
   --font-nav: "Serif Pixel 7", "Cormorant Garamond", serif;
   --font-body: "SuisseIntlCond-Thin", "Helvetica Neue", Arial, sans-serif;
+  --body-size: clamp(26px, 3.8vw, 48px);
+  --body-line-height: 0.86;
+  --body-letter-spacing: -0.045em;
+  --body-meta-size: clamp(20px, 2.6vw, 36px);
+  --body-meta-line-height: 0.88;
+  --body-paragraph-gap: 0.52em;
 }
 
 .experimental-title,
@@ -59,13 +65,38 @@
 .object-project-copy,
 .object-copy,
 .cv-section,
-.contact-section,
+.contact-section {
+  font-family: var(--font-body);
+  font-weight: 100;
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+  letter-spacing: var(--body-letter-spacing);
+  text-align: left;
+  text-align-last: auto;
+}
+
 .soft-residue-meta,
 .object-project-copy .object-meta,
 .object-copy .object-meta,
 .soft-residue-grid figcaption {
   font-family: var(--font-body);
   font-weight: 100;
+  font-size: var(--body-meta-size);
+  line-height: var(--body-meta-line-height);
+  letter-spacing: var(--body-letter-spacing);
+}
+
+.about-copy p + p,
+.experimental-copy p + p,
+.experimental-variation-text p + p,
+.soft-residue-copy p + p,
+.object-project-copy p + p,
+.object-copy p + p,
+.cv-intro p + p,
+.cv-section li + li,
+.cv-section p + p,
+.contact-section p + p {
+  margin-top: var(--body-paragraph-gap);
 }
 
 strong,
@@ -321,10 +352,6 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 34px;
-  font-size: 15px;
-  line-height: 1.62;
-  text-align: justify;
-  text-align-last: left;
 }
 
 .about-copy p {
@@ -737,14 +764,10 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 34px;
-  row-gap: 14px;
+  row-gap: var(--body-paragraph-gap);
   align-items: start;
   width: min(1120px, 100%);
   margin-top: 28px;
-  font-size: 14px;
-  line-height: 1.55;
-  text-align: justify;
-  text-align-last: left;
 }
 
 .experimental-copy p {
@@ -771,7 +794,7 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
 .experimental-variation {
   --variation-heading-size: 14px;
   --variation-heading-height: 18.2px;
-  --variation-row-gap: 18px;
+  --variation-row-gap: 0.45em;
   display: grid;
   grid-template-columns: minmax(220px, 360px) minmax(0, 1fr);
   column-gap: 34px;
@@ -820,10 +843,6 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
 .experimental-variation-text p {
   margin: 0;
   width: 100%;
-  font-size: 14px;
-  line-height: 1.55;
-  text-align: justify;
-  text-align-last: left;
 }
 
 .experimental-grid {
@@ -857,14 +876,10 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 34px;
-  row-gap: 14px;
+  row-gap: var(--body-paragraph-gap);
   align-items: start;
   width: min(1120px, 100%);
   margin-top: 28px;
-  font-size: 14px;
-  line-height: 1.55;
-  text-align: justify;
-  text-align-last: left;
 }
 
 .soft-residue-copy > [lang],
@@ -928,8 +943,6 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
 
 .soft-residue-meta {
   margin-top: 18px;
-  font-size: 13px;
-  line-height: 1.4;
 }
 
 .soft-residue-grid {
@@ -1021,14 +1034,10 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 34px;
-  row-gap: 14px;
+  row-gap: var(--body-paragraph-gap);
   align-items: start;
   width: min(1120px, 100%);
   margin-top: 28px;
-  font-size: 14px;
-  line-height: 1.55;
-  text-align: justify;
-  text-align-last: left;
   color: #f1f3f5;
 }
 
@@ -1039,8 +1048,6 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
 .object-project-copy .object-meta {
   margin-top: 18px;
   margin-bottom: 0;
-  font-size: 13px;
-  line-height: 1.4;
 }
 
 .object-project-grid {
@@ -1169,24 +1176,18 @@ body.site-lang-en .experimental-variation-text p[lang="en"] {
 
 .object-copy {
   justify-self: start;
-  max-width: 560px;
+  max-width: min(1120px, 100%);
   padding-top: clamp(58px, 7vw, 106px);
-  font-size: 14px;
-  line-height: 1.55;
-  text-align: justify;
-  text-align-last: left;
   color: #f1f3f5;
 }
 
 .object-copy p {
-  margin: 0 0 14px;
+  margin: 0;
 }
 
 .object-copy .object-meta {
   margin-top: 18px;
   margin-bottom: 28px;
-  font-size: 13px;
-  line-height: 1.4;
 }
 
 .object-text-en {
@@ -1394,7 +1395,7 @@ body.lightbox-open .overlay-content {
   position: relative;
   margin-top: 0;
   margin-left: 34px;
-  max-width: 620px;
+  max-width: min(1040px, calc(100vw - 68px));
   padding: 0;
   color: #eef1f4;
 }
@@ -1409,11 +1410,7 @@ body.lightbox-open .overlay-content {
 }
 
 .cv-intro p {
-  margin: 0 0 12px;
-  font-size: 15px;
-  line-height: 1.55;
-  text-align: justify;
-  text-align-last: left;
+  margin: 0;
 }
 
 .cv-intro p:last-child {
@@ -1439,14 +1436,11 @@ body.lightbox-open .overlay-content {
 }
 
 .cv-section li {
-  margin: 0 0 14px;
-  font-size: 16px;
-  line-height: 1.45;
+  margin: 0;
 }
 
 .cv-section p {
-  margin: 10px 0 0;
-  font-size: 16px;
+  margin: 0;
 }
 
 .cv-section a {
@@ -1460,7 +1454,7 @@ body.lightbox-open .overlay-content {
 .contact-section {
   margin-top: 0;
   margin-left: 34px;
-  max-width: 620px;
+  max-width: min(1040px, calc(100vw - 68px));
   color: #eef1f4;
 }
 
@@ -1471,8 +1465,7 @@ body.lightbox-open .overlay-content {
 }
 
 .contact-section p {
-  margin: 6px 0;
-  font-size: 16px;
+  margin: 0;
 }
 
 .contact-section a {
@@ -1598,10 +1591,6 @@ body.lightbox-open .overlay-content {
 
   .about-copy {
     gap: 13px;
-    font-size: 14px;
-    line-height: 1.62;
-    text-align: left;
-    text-align-last: auto;
   }
 
   .about-projects {
@@ -1674,10 +1663,6 @@ body.lightbox-open .overlay-content {
     gap: 13px;
     width: 100%;
     margin-top: 24px;
-    font-size: 14px;
-    line-height: 1.62;
-    text-align: left;
-    text-align-last: auto;
   }
 
   .experimental-variations {
@@ -1698,14 +1683,7 @@ body.lightbox-open .overlay-content {
   }
 
   .experimental-variation-text {
-    gap: 13px;
-  }
-
-  .experimental-variation-text p {
-    font-size: 14px;
-    line-height: 1.62;
-    text-align: left;
-    text-align-last: auto;
+    gap: 0.45em;
   }
 
   .experimental-variation-text h3 {
@@ -1756,10 +1734,6 @@ body.lightbox-open .overlay-content {
     justify-self: start;
     max-width: none;
     padding-top: 0;
-    font-size: 14px;
-    line-height: 1.62;
-    text-align: left;
-    text-align-last: auto;
   }
 
   .object-text-en {
@@ -1784,8 +1758,7 @@ body.lightbox-open .overlay-content {
   .cv-section li,
   .cv-section p,
   .contact-section p {
-    font-size: 14px;
-    line-height: 1.5;
+    --body-size: clamp(20px, 6vw, 34px);
   }
 
   .contact-section h2 {
@@ -1902,8 +1875,8 @@ body.lightbox-open .overlay-content {
   .soft-residue-copy,
   .object-project-copy,
   .object-copy {
-    font-size: 13px;
-    line-height: 1.58;
+    --body-size: clamp(22px, 6.8vw, 38px);
+    --body-meta-size: clamp(18px, 5vw, 30px);
   }
 
   .experimental-variations {
@@ -1973,8 +1946,9 @@ body {
   color: var(--ink);
   font-family: var(--font-body);
   font-weight: 100;
-  font-size: 14px;
-  line-height: 1.42;
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+  letter-spacing: var(--body-letter-spacing);
   overflow-x: hidden;
 }
 
@@ -2562,11 +2536,7 @@ body::before {
   padding-top: 22px;
   border-top: 1px solid var(--line);
   color: var(--ink);
-  font-size: 13px;
-  line-height: 1.46;
   column-gap: 42px;
-  text-align: left;
-  text-align-last: auto;
 }
 
 .experimental-copy p,
@@ -2652,8 +2622,6 @@ body::before {
 .object-project-copy .object-meta,
 .object-copy .object-meta {
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.4;
   text-transform: none;
 }
 
@@ -2686,10 +2654,6 @@ body::before {
 .cv-section p,
 .contact-section p {
   color: var(--ink);
-  font-size: 13px;
-  line-height: 1.48;
-  text-align: left;
-  text-align-last: auto;
 }
 
 .cv-section h3 {
@@ -3177,9 +3141,10 @@ body::after {
 .page-description {
   color: rgba(45, 49, 45, 0.74);
   font-family: var(--font-body);
-  font-size: 19px;
+  font-size: var(--body-size);
   font-weight: 100;
-  line-height: 1.15;
+  line-height: var(--body-line-height);
+  letter-spacing: var(--body-letter-spacing);
 }
 
 .page-meta div {
@@ -3452,8 +3417,6 @@ body::after {
   border-top: 1px solid rgba(55, 60, 55, 0.13);
   color: rgba(35, 39, 35, 0.78);
   font-family: var(--font-body);
-  font-size: 13px;
-  line-height: 1.58;
 }
 
 .three-d-hero,
